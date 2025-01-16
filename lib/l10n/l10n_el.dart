@@ -1,5 +1,5 @@
+// ignore: unused_import
 import 'package:intl/intl.dart' as intl;
-
 import 'l10n.dart';
 
 // ignore_for_file: type=lint
@@ -15,9 +15,6 @@ class AppLocalizationsEl extends AppLocalizations {
   String get mobileAreYouSure => 'Είστε σίγουροι;';
 
   @override
-  String get mobileBlindfoldMode => 'Τυφλό';
-
-  @override
   String get mobileCancelTakebackOffer => 'Ακυρώστε την προσφορά αναίρεσης της κίνησης';
 
   @override
@@ -27,7 +24,7 @@ class AppLocalizationsEl extends AppLocalizations {
   String get mobileCorrespondenceClearSavedMove => 'Εκκαθάριση αποθηκευμένης κίνησης';
 
   @override
-  String get mobileCustomGameJoinAGame => 'Συμμετοχή σε παιχνίδι';
+  String get mobileCustomGameJoinAGame => 'Συμμετοχή σε παρτίδα';
 
   @override
   String get mobileFeedbackButton => 'Πείτε μας τη γνώμη σας';
@@ -82,7 +79,7 @@ class AppLocalizationsEl extends AppLocalizations {
   String get mobilePuzzleStormSubtitle => 'Λύστε όσους γρίφους όσο το δυνατόν, σε 3 λεπτά.';
 
   @override
-  String get mobilePuzzleStreakAbortWarning => 'You will lose your current streak and your score will be saved.';
+  String get mobilePuzzleStreakAbortWarning => 'Θα χάσετε το τρέχων σερί αποτελεσμάτων σας και η βαθμολογία θα αποθηκευτεί.';
 
   @override
   String get mobilePuzzleThemesSubtitle => 'Παίξτε γρίφους από τα αγαπημένα σας ανοίγματα, ή επιλέξτε θέμα.';
@@ -97,7 +94,7 @@ class AppLocalizationsEl extends AppLocalizations {
   String get mobileSettingsHapticFeedback => 'Απόκριση δόνησης';
 
   @override
-  String get mobileSettingsImmersiveMode => 'Immersive mode';
+  String get mobileSettingsImmersiveMode => 'Λειτουργία εστίασης';
 
   @override
   String get mobileSettingsImmersiveModeSubtitle => 'Αποκρύπτει τη διεπαφή του συστήματος όσο παίζεται. Ενεργοποιήστε εάν σας ενοχλούν οι χειρονομίες πλοήγησης του συστήματος στα άκρα της οθόνης. Ισχύει για την προβολή παιχνιδιού και το Puzzle Storm.';
@@ -133,7 +130,7 @@ class AppLocalizationsEl extends AppLocalizations {
   String get mobileSystemColors => 'Χρώματα συστήματος';
 
   @override
-  String get mobileTheme => 'Theme';
+  String get mobileTheme => 'Εμφάνιση';
 
   @override
   String get mobileToolsTab => 'Εργαλεία';
@@ -363,22 +360,22 @@ class AppLocalizationsEl extends AppLocalizations {
   String get broadcastMyBroadcasts => 'Οι αναμεταδόσεις μου';
 
   @override
-  String get broadcastLiveBroadcasts => 'Αναμεταδόσεις ζωντανών τουρνούα';
+  String get broadcastLiveBroadcasts => 'Αναμεταδόσεις ζωντανών τουρνουά';
 
   @override
-  String get broadcastBroadcastCalendar => 'Broadcast calendar';
+  String get broadcastBroadcastCalendar => 'Ημερολόγιο αναμεταδόσεων';
 
   @override
   String get broadcastNewBroadcast => 'Νέα ζωντανή αναμετάδοση';
 
   @override
-  String get broadcastSubscribedBroadcasts => 'Εγγεγραμμένες μεταδώσεις';
+  String get broadcastSubscribedBroadcasts => 'Εγγεγραμμένες αναμεταδόσεις';
 
   @override
-  String get broadcastAboutBroadcasts => 'Σχετικά με εκπομπές';
+  String get broadcastAboutBroadcasts => 'Σχετικά με τις αναμεταδόσεις';
 
   @override
-  String get broadcastHowToUseLichessBroadcasts => 'Πώς να χρησιμοποιήσετε τις εκπομπές Lichess.';
+  String get broadcastHowToUseLichessBroadcasts => 'Πώς να χρησιμοποιήσετε τις αναμεταδόσεις Lichess.';
 
   @override
   String get broadcastTheNewRoundHelp => 'Ο νέος γύρος θα έχει τα ίδια μέλη και τους ίδιους συνεισφέροντες όπως ο προηγούμενος.';
@@ -419,24 +416,24 @@ class AppLocalizationsEl extends AppLocalizations {
   }
 
   @override
-  String get broadcastSourceSingleUrl => 'PGN Source URL';
+  String get broadcastSourceSingleUrl => 'Πηγαίο URL για PGN';
 
   @override
   String get broadcastSourceUrlHelp => 'URL για λήψη PGN ενημερώσεων. Πρέπει να είναι δημόσια προσβάσιμο μέσω διαδικτύου.';
 
   @override
-  String get broadcastSourceGameIds => 'Up to 64 Lichess game IDs, separated by spaces.';
+  String get broadcastSourceGameIds => 'Έως και 64 ταυτότητες παιχνιδιών Lichess, διαχωριζόμενες από κενά.';
 
   @override
   String broadcastStartDateTimeZone(String param) {
-    return 'Start date in the tournament local timezone: $param';
+    return 'Ημερομηνία έναρξης του τουρνουά στην τοπική ζώνη ώρας: $param';
   }
 
   @override
   String get broadcastStartDateHelp => 'Προαιρετικό, εάν γνωρίζετε πότε αρχίζει η εκδήλωση';
 
   @override
-  String get broadcastCurrentGameUrl => 'Διεύθυνση URL αυτού του παιχνιδιού';
+  String get broadcastCurrentGameUrl => 'Διεύθυνση URL αυτής της παρτίδας';
 
   @override
   String get broadcastDownloadAllRounds => 'Λήψη όλων των γύρων';
@@ -448,10 +445,10 @@ class AppLocalizationsEl extends AppLocalizations {
   String get broadcastDeleteRound => 'Διαγραφή αυτού του γύρου';
 
   @override
-  String get broadcastDefinitivelyDeleteRound => 'Σίγουρα διαγράψτε τον γύρο και όλα τα παιχνίδια του.';
+  String get broadcastDefinitivelyDeleteRound => 'Διαγράψτε οριστικά τον γύρο και όλες τις παρτίδες του.';
 
   @override
-  String get broadcastDeleteAllGamesOfThisRound => 'Διαγράψτε όλα τα παιχνίδια αυτού του γύρου. Η πηγή μετάδοσης θα πρέπει να είναι ενεργή για να τα ξαναδημιουργήσετε.';
+  String get broadcastDeleteAllGamesOfThisRound => 'Διαγράψτε όλες τις παρτίδες αυτού του γύρου. Η πηγή μετάδοσης θα πρέπει να είναι ενεργή για να τα ξαναδημιουργήσετε.';
 
   @override
   String get broadcastEditRoundStudy => 'Επεξεργασία μελέτης γύρου';
@@ -460,19 +457,19 @@ class AppLocalizationsEl extends AppLocalizations {
   String get broadcastDeleteTournament => 'Διαγραφή αυτού του τουρνουά';
 
   @override
-  String get broadcastDefinitivelyDeleteTournament => 'Σίγουρα διαγράψτε ολόκληρο τον διαγωνισμό, όλους τους γύρους του και όλα τα παιχνίδια του.';
+  String get broadcastDefinitivelyDeleteTournament => 'Σίγουρα διαγράψτε ολόκληρο τον διαγωνισμό, όλους τους γύρους του και όλες τις παρτίδες του.';
 
   @override
-  String get broadcastShowScores => 'Show players scores based on game results';
+  String get broadcastShowScores => 'Εμφάνιση βαθμολογιών παικτών βάσει των αποτελεσμάτων των παρτίδων.';
 
   @override
-  String get broadcastReplacePlayerTags => 'Optional: replace player names, ratings and titles';
+  String get broadcastReplacePlayerTags => 'Προαιρετικό: αντικατάσταση ονομάτων, βαθμολογιών και τίτλων παικτών';
 
   @override
   String get broadcastFideFederations => 'Ομοσπονδίες FIDE';
 
   @override
-  String get broadcastTop10Rating => 'Top 10 rating';
+  String get broadcastTop10Rating => 'Κορυφαίες 10 βαθμολογίες';
 
   @override
   String get broadcastFidePlayers => 'Παίκτες FIDE';
@@ -490,7 +487,7 @@ class AppLocalizationsEl extends AppLocalizations {
   String get broadcastAgeThisYear => 'Φετινή ηλικία';
 
   @override
-  String get broadcastUnrated => 'Unrated';
+  String get broadcastUnrated => 'Μη βαθμολογημένο';
 
   @override
   String get broadcastRecentTournaments => 'Πρόσφατα τουρνουά';
@@ -508,17 +505,17 @@ class AppLocalizationsEl extends AppLocalizations {
   String get broadcastOverview => 'Επισκόπηση';
 
   @override
-  String get broadcastSubscribeTitle => 'Subscribe to be notified when each round starts. You can toggle bell or push notifications for broadcasts in your account preferences.';
+  String get broadcastSubscribeTitle => 'Εγγραφείτε για να ειδοποιείστε όταν ξεκινάει ο κάθε γύρος. Μπορείτε να εναλλάξετε μεταξύ του κουδουνιού ή των push ειδοποιήσεων για αναμεταδόσεις, στις προτιμήσεις του λογαριασμού σας.';
 
   @override
   String get broadcastUploadImage => 'Ανεβάστε εικόνα τουρνουά';
 
   @override
-  String get broadcastNoBoardsYet => 'No boards yet. These will appear once games are uploaded.';
+  String get broadcastNoBoardsYet => 'Δεν υπάρχουν διαθέσιμες σκακιέρες ακόμα. Θα εμφανιστούν μόλις φορτωθούν οι παρτίδες.';
 
   @override
   String broadcastBoardsCanBeLoaded(String param) {
-    return 'Boards can be loaded with a source or via the $param';
+    return 'Οι σκακιέρες μπορούν να φορτωθούν από μια πηγή ή μέσω του $param';
   }
 
   @override
@@ -527,10 +524,10 @@ class AppLocalizationsEl extends AppLocalizations {
   }
 
   @override
-  String get broadcastStartVerySoon => 'The broadcast will start very soon.';
+  String get broadcastStartVerySoon => 'Η αναμετάδοση θα ξεκινήσει πολύ σύντομα.';
 
   @override
-  String get broadcastNotYetStarted => 'The broadcast has not yet started.';
+  String get broadcastNotYetStarted => 'Η αναμετάδοση δεν έχει ξεκινήσει ακόμα.';
 
   @override
   String get broadcastOfficialWebsite => 'Επίσημη ιστοσελίδα';
@@ -539,27 +536,27 @@ class AppLocalizationsEl extends AppLocalizations {
   String get broadcastStandings => 'Κατάταξη';
 
   @override
-  String get broadcastOfficialStandings => 'Official Standings';
+  String get broadcastOfficialStandings => 'Επίσημη Κατάταξη';
 
   @override
   String broadcastIframeHelp(String param) {
-    return 'More options on the $param';
+    return 'Περισσότερες επιλογές στη $param';
   }
 
   @override
-  String get broadcastWebmastersPage => 'webmasters page';
+  String get broadcastWebmastersPage => 'σελίδα για webmasters';
 
   @override
   String broadcastPgnSourceHelp(String param) {
-    return 'A public, real-time PGN source for this round. We also offer a $param for faster and more efficient synchronisation.';
+    return 'Μια δημόσια πηγή PGN πολύ λειτουργεί σε πραγματικό χρόνο για αυτόν τον γύρο. Προσφέρουμε επίσης το $param για γρηγορότερο και αποτελεσματικότερο συγχρονισμό.';
   }
 
   @override
-  String get broadcastEmbedThisBroadcast => 'Embed this broadcast in your website';
+  String get broadcastEmbedThisBroadcast => 'Ενσωμάτωση αυτήν την αναμετάδοση στην ιστοσελίδα σας';
 
   @override
   String broadcastEmbedThisRound(String param) {
-    return 'Embed $param in your website';
+    return 'Ενσωματώστε τον $param στην ιστοσελίδα σας';
   }
 
   @override
@@ -572,34 +569,31 @@ class AppLocalizationsEl extends AppLocalizations {
   String get broadcastScore => 'Βαθμολογία';
 
   @override
-  String get broadcastAllTeams => 'All teams';
+  String get broadcastAllTeams => 'Όλες οι ομάδες';
 
   @override
-  String get broadcastTournamentFormat => 'Tournament format';
+  String get broadcastTournamentFormat => 'Μορφή τουρνουά';
 
   @override
-  String get broadcastTournamentLocation => 'Tournament Location';
+  String get broadcastTournamentLocation => 'Τοποθεσία Τουρνουά';
 
   @override
-  String get broadcastTopPlayers => 'Top players';
+  String get broadcastTopPlayers => 'Κορυφαίοι παίκτες';
 
   @override
-  String get broadcastTimezone => 'Time zone';
+  String get broadcastTimezone => 'Ζώνη ώρας';
 
   @override
-  String get broadcastFideRatingCategory => 'FIDE rating category';
+  String get broadcastFideRatingCategory => 'Κατηγορία αξιολόγησης FIDE';
 
   @override
-  String get broadcastOptionalDetails => 'Optional details';
+  String get broadcastOptionalDetails => 'Προαιρετικές λεπτομέρειες';
 
   @override
-  String get broadcastUpcomingBroadcasts => 'Upcoming broadcasts';
+  String get broadcastPastBroadcasts => 'Προηγούμενες αναμεταδόσεις';
 
   @override
-  String get broadcastPastBroadcasts => 'Past broadcasts';
-
-  @override
-  String get broadcastAllBroadcastsByMonth => 'View all broadcasts by month';
+  String get broadcastAllBroadcastsByMonth => 'Προβολή όλων των αναμεταδόσεων ανά μήνα';
 
   @override
   String broadcastNbBroadcasts(int count) {
@@ -871,6 +865,9 @@ class AppLocalizationsEl extends AppLocalizations {
   String get preferencesInGameOnly => 'Μόνο κατά τη διάρκεια του παιχνιδιού';
 
   @override
+  String get preferencesExceptInGame => 'Except in-game';
+
+  @override
   String get preferencesChessClock => 'Σκακιστικό χρονόμετρο';
 
   @override
@@ -1010,6 +1007,9 @@ class AppLocalizationsEl extends AppLocalizations {
 
   @override
   String get preferencesBellNotificationSound => 'Ειδοποίηση με ήχο από καμπανάκι';
+
+  @override
+  String get preferencesBlindfold => 'Τυφλό';
 
   @override
   String get puzzlePuzzles => 'Γρίφοι';
@@ -5059,7 +5059,7 @@ class AppLocalizationsEl extends AppLocalizations {
   String get studyContributor => 'Συνεισφέρων';
 
   @override
-  String get studyKick => 'Διώξε';
+  String get studyKick => 'Αποβολή';
 
   @override
   String get studyLeaveTheStudy => 'Αποχώρησε από αυτήν την μελέτη';
@@ -5456,7 +5456,7 @@ class AppLocalizationsEl extends AppLocalizations {
 
   @override
   String studyPerPage(String param) {
-    return '$param per page';
+    return '$param ανά σελίδα';
   }
 
   @override
@@ -5499,6 +5499,180 @@ class AppLocalizationsEl extends AppLocalizations {
       locale: localeName,
       other: 'Επικολλήστε το PGN εδώ, μέχρι $count παρτίδες',
       one: 'Επικολλήστε το PGN εδώ, μέχρι $count παρτίδα',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get timeagoJustNow => 'μόλις τώρα';
+
+  @override
+  String get timeagoRightNow => 'αυτή τη στιγμή';
+
+  @override
+  String get timeagoCompleted => 'ολοκληρώθηκε';
+
+  @override
+  String timeagoInNbSeconds(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'σε $count δευτερόλεπτα',
+      one: 'σε $count δευτερόλεπτο',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbMinutes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'σε $count λεπτά',
+      one: 'σε $count λεπτό',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbHours(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'σε $count ώρες',
+      one: 'σε $count ώρα',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'σε $count ημέρες',
+      one: 'σε $count ημέρα',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbWeeks(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'σε $count εβδομάδες',
+      one: 'σε $count εβδομάδα',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbMonths(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'σε $count μήνες',
+      one: 'σε $count μήνα',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbYears(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count έτη',
+      one: 'σε $count έτος',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbMinutesAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count λεπτά πριν',
+      one: '$count λεπτό πριν',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbHoursAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count ώρες πριν',
+      one: '$count ώρα πριν',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbDaysAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count ημέρες πριν',
+      one: '$count μέρα πριν',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbWeeksAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count εβδομάδες πριν',
+      one: '$count εβδομάδα πριν',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbMonthsAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count μήνες πριν',
+      one: '$count μήνα πριν',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbYearsAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count χρόνια πριν',
+      one: '$count χρόνο πριν',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbMinutesRemaining(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'απομένουν $count λεπτά',
+      one: 'απομένει $count λεπτό',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbHoursRemaining(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'απομένουν $count ώρες',
+      one: 'απομένει $count ώρα',
     );
     return '$_temp0';
   }

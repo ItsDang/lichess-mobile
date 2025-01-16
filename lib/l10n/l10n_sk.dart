@@ -1,5 +1,5 @@
+// ignore: unused_import
 import 'package:intl/intl.dart' as intl;
-
 import 'l10n.dart';
 
 // ignore_for_file: type=lint
@@ -13,9 +13,6 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get mobileAreYouSure => 'Ste si istý?';
-
-  @override
-  String get mobileBlindfoldMode => 'Naslepo';
 
   @override
   String get mobileCancelTakebackOffer => 'Zrušiť žiadosť o vrátenie ťahu';
@@ -133,7 +130,7 @@ class AppLocalizationsSk extends AppLocalizations {
   String get mobileSystemColors => 'Farby operačného systému';
 
   @override
-  String get mobileTheme => 'Theme';
+  String get mobileTheme => 'Vzhľad';
 
   @override
   String get mobileToolsTab => 'Nástroje';
@@ -559,7 +556,7 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String broadcastStartsAfter(String param) {
-    return 'Starts after $param';
+    return 'Začína po $param';
   }
 
   @override
@@ -575,7 +572,7 @@ class AppLocalizationsSk extends AppLocalizations {
   String get broadcastStandings => 'Poradie';
 
   @override
-  String get broadcastOfficialStandings => 'Official Standings';
+  String get broadcastOfficialStandings => 'Oficiálne poradie';
 
   @override
   String broadcastIframeHelp(String param) {
@@ -608,34 +605,31 @@ class AppLocalizationsSk extends AppLocalizations {
   String get broadcastScore => 'Skóre';
 
   @override
-  String get broadcastAllTeams => 'All teams';
+  String get broadcastAllTeams => 'Všetky tímy';
 
   @override
-  String get broadcastTournamentFormat => 'Tournament format';
+  String get broadcastTournamentFormat => 'Formát turnaja';
 
   @override
-  String get broadcastTournamentLocation => 'Tournament Location';
+  String get broadcastTournamentLocation => 'Miesto konania turnaja';
 
   @override
-  String get broadcastTopPlayers => 'Top players';
+  String get broadcastTopPlayers => 'Najlepší hráči';
 
   @override
-  String get broadcastTimezone => 'Time zone';
+  String get broadcastTimezone => 'Časové pásmo';
 
   @override
-  String get broadcastFideRatingCategory => 'FIDE rating category';
+  String get broadcastFideRatingCategory => 'Kategória FIDE ratingu';
 
   @override
-  String get broadcastOptionalDetails => 'Optional details';
+  String get broadcastOptionalDetails => 'Nepovinné údaje';
 
   @override
-  String get broadcastUpcomingBroadcasts => 'Upcoming broadcasts';
+  String get broadcastPastBroadcasts => 'Predchádzajúce vysielania';
 
   @override
-  String get broadcastPastBroadcasts => 'Past broadcasts';
-
-  @override
-  String get broadcastAllBroadcastsByMonth => 'View all broadcasts by month';
+  String get broadcastAllBroadcastsByMonth => 'Zobraziť všetky vysielania podľa mesiacov';
 
   @override
   String broadcastNbBroadcasts(int count) {
@@ -909,6 +903,9 @@ class AppLocalizationsSk extends AppLocalizations {
   String get preferencesInGameOnly => 'Iba pri partii';
 
   @override
+  String get preferencesExceptInGame => 'Except in-game';
+
+  @override
   String get preferencesChessClock => 'Šachové hodiny';
 
   @override
@@ -1048,6 +1045,9 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get preferencesBellNotificationSound => 'Zvuk upozornenia';
+
+  @override
+  String get preferencesBlindfold => 'Naslepo';
 
   @override
   String get puzzlePuzzles => 'Šachové úlohy';
@@ -5592,7 +5592,7 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String studyPerPage(String param) {
-    return '$param per page';
+    return '$param na stránku';
   }
 
   @override
@@ -5643,6 +5643,210 @@ class AppLocalizationsSk extends AppLocalizations {
       many: 'Váš PGN text vložte sem, maximálne $count partií',
       few: 'Váš PGN text vložte sem, maximálne $count partie',
       one: 'Váš PGN text vložte sem, maximálne $count partiu',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get timeagoJustNow => 'práve teraz';
+
+  @override
+  String get timeagoRightNow => 'práve teraz';
+
+  @override
+  String get timeagoCompleted => 'ukončené';
+
+  @override
+  String timeagoInNbSeconds(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'o $count sekúnd',
+      many: 'o $count sekúnd',
+      few: 'o $count sekundy',
+      one: 'o $count sekundu',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbMinutes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'o $count minút',
+      many: 'o $count minút',
+      few: 'o $count minút',
+      one: 'o $count minútu',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbHours(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'o $count hodín',
+      many: 'o $count hodín',
+      few: 'o $count hodiny',
+      one: 'o $count hodinu',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'o $count dní',
+      many: 'o $count dní',
+      few: 'o $count dni',
+      one: 'o $count deň',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbWeeks(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'o $count týždňov',
+      many: 'o $count týždňov',
+      few: 'o $count týždne',
+      one: 'o $count týždeň',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbMonths(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'o $count mesiacov',
+      many: 'o $count mesiacov',
+      few: 'o $count mesiace',
+      one: 'o $count mesiac',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbYears(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'o $count rokov',
+      many: 'o $count rokov',
+      few: 'o $count roky',
+      one: 'o $count rok',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbMinutesAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'pred $count minútami',
+      many: 'pred $count minútami',
+      few: 'pred $count minútami',
+      one: 'pred $count minútou',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbHoursAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'pred $count hodinami',
+      many: 'pred $count hodinami',
+      few: 'pred $count hodinami',
+      one: 'pred $count hodinou',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbDaysAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'pred $count dňami',
+      many: 'pred $count dňami',
+      few: 'pred $count dňami',
+      one: 'pred $count dňom',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbWeeksAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'pred $count týždňami',
+      many: 'pred $count týždňami',
+      few: 'pred $count týždňami',
+      one: 'pred $count týždňom',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbMonthsAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'pred $count mesiacmi',
+      many: 'pred $count mesiacmi',
+      few: 'pred $count mesiacmi',
+      one: 'pred $count mesiacom',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbYearsAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'pred $count rokmi',
+      many: 'pred $count rokmi',
+      few: 'pred $count rokmi',
+      one: 'pred $count rokom',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbMinutesRemaining(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'ostáva $count minút',
+      many: 'ostáva $count minút',
+      few: 'ostávajú $count minúty',
+      one: 'ostáva $count minúta',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbHoursRemaining(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'ostáva $count hodín',
+      many: 'ostáva $count hodín',
+      few: 'ostávajú $count hodiny',
+      one: 'ostáva $count hodina',
     );
     return '$_temp0';
   }

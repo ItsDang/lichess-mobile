@@ -5,12 +5,7 @@ import 'package:lichess_mobile/src/model/common/id.dart';
 
 part 'broadcast.freezed.dart';
 
-typedef BroadcastsList = ({
-  IList<Broadcast> active,
-  IList<Broadcast> upcoming,
-  IList<Broadcast> past,
-  int? nextPage,
-});
+typedef BroadcastList = ({IList<Broadcast> active, IList<Broadcast> past, int? nextPage});
 
 enum BroadcastResult { whiteWins, blackWins, draw, ongoing, noResultPgnTag }
 
@@ -49,48 +44,44 @@ class BroadcastTournamentData with _$BroadcastTournamentData {
   const factory BroadcastTournamentData({
     required BroadcastTournamentId id,
     required String name,
+    required String slug,
     required String? imageUrl,
     required String? description,
+    // PRIVATE=-1, NORMAL=3, HIGH=4, BEST=5
+    int? tier,
     required BroadcastTournamentInformation information,
   }) = _BroadcastTournamentData;
 }
 
-typedef BroadcastTournamentInformation = ({
-  String? format,
-  String? timeControl,
-  String? players,
-  String? location,
-  BroadcastTournamentDates? dates,
-  Uri? website,
-});
+typedef BroadcastTournamentInformation =
+    ({
+      String? format,
+      String? timeControl,
+      String? players,
+      String? location,
+      BroadcastTournamentDates? dates,
+      Uri? website,
+      Uri? standings,
+    });
 
-typedef BroadcastTournamentDates = ({
-  DateTime startsAt,
-  DateTime? endsAt,
-});
+typedef BroadcastTournamentDates = ({DateTime startsAt, DateTime? endsAt});
 
-typedef BroadcastTournamentGroup = ({
-  BroadcastTournamentId id,
-  String name,
-});
+typedef BroadcastTournamentGroup = ({BroadcastTournamentId id, String name});
 
 @freezed
 class BroadcastRound with _$BroadcastRound {
-  const BroadcastRound._();
-
   const factory BroadcastRound({
     required BroadcastRoundId id,
     required String name,
+    required String slug,
     required RoundStatus status,
     required DateTime? startsAt,
-    DateTime? finishedAt,
+    required DateTime? finishedAt,
+    required bool startsAfterPrevious,
   }) = _BroadcastRound;
 }
 
-typedef BroadcastRoundWithGames = ({
-  BroadcastRound round,
-  BroadcastRoundGames games,
-});
+typedef BroadcastRoundWithGames = ({BroadcastRound round, BroadcastRoundGames games});
 
 typedef BroadcastRoundGames = IMap<BroadcastGameId, BroadcastGame>;
 
@@ -117,19 +108,52 @@ class BroadcastGame with _$BroadcastGame {
 
 @freezed
 class BroadcastPlayer with _$BroadcastPlayer {
-  const BroadcastPlayer._();
-
   const factory BroadcastPlayer({
     required String name,
     required String? title,
     required int? rating,
     required Duration? clock,
     required String? federation,
+    required FideId? fideId,
   }) = _BroadcastPlayer;
 }
 
-enum RoundStatus {
-  live,
-  finished,
-  upcoming,
+@freezed
+class BroadcastPlayerExtended with _$BroadcastPlayerExtended {
+  const factory BroadcastPlayerExtended({
+    required String name,
+    required String? title,
+    required int? rating,
+    required String? federation,
+    required FideId? fideId,
+    required int played,
+    required double? score,
+    required int? ratingDiff,
+    required int? performance,
+  }) = _BroadcastPlayerExtended;
 }
+
+typedef BroadcastFideData = ({({int? standard, int? rapid, int? blitz}) ratings, int? birthYear});
+
+typedef BroadcastPlayerResults =
+    ({
+      BroadcastPlayerExtended player,
+      BroadcastFideData fideData,
+      IList<BroadcastPlayerResultData> games,
+    });
+
+enum BroadcastPoints { one, half, zero }
+
+@freezed
+class BroadcastPlayerResultData with _$BroadcastPlayerResultData {
+  const factory BroadcastPlayerResultData({
+    required BroadcastRoundId roundId,
+    required BroadcastGameId gameId,
+    required Side color,
+    required BroadcastPoints? points,
+    required int? ratingDiff,
+    required BroadcastPlayer opponent,
+  }) = _BroadcastPlayerResult;
+}
+
+enum RoundStatus { live, finished, upcoming }

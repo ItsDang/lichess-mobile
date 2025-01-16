@@ -1,5 +1,5 @@
+// ignore: unused_import
 import 'package:intl/intl.dart' as intl;
-
 import 'l10n.dart';
 
 // ignore_for_file: type=lint
@@ -13,9 +13,6 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get mobileAreYouSure => 'Emin misiniz?';
-
-  @override
-  String get mobileBlindfoldMode => 'Körleme modu';
 
   @override
   String get mobileCancelTakebackOffer => 'Geri alma teklifini iptal et';
@@ -133,7 +130,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get mobileSystemColors => 'Sistem renkleri';
 
   @override
-  String get mobileTheme => 'Theme';
+  String get mobileTheme => 'Tema';
 
   @override
   String get mobileToolsTab => 'Araçlar';
@@ -539,7 +536,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get broadcastStandings => 'Sıralamalar';
 
   @override
-  String get broadcastOfficialStandings => 'Official Standings';
+  String get broadcastOfficialStandings => 'Resmi Sıralamalar';
 
   @override
   String broadcastIframeHelp(String param) {
@@ -547,7 +544,7 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
-  String get broadcastWebmastersPage => 'webmasters page';
+  String get broadcastWebmastersPage => 'ağ yöneticileri sayfası';
 
   @override
   String broadcastPgnSourceHelp(String param) {
@@ -572,34 +569,31 @@ class AppLocalizationsTr extends AppLocalizations {
   String get broadcastScore => 'Skor';
 
   @override
-  String get broadcastAllTeams => 'All teams';
+  String get broadcastAllTeams => 'Tüm takımlar';
 
   @override
-  String get broadcastTournamentFormat => 'Tournament format';
+  String get broadcastTournamentFormat => 'Turnuva biçimi';
 
   @override
-  String get broadcastTournamentLocation => 'Tournament Location';
+  String get broadcastTournamentLocation => 'Turnuva Konumu';
 
   @override
-  String get broadcastTopPlayers => 'Top players';
+  String get broadcastTopPlayers => 'En iyi oyuncular';
 
   @override
-  String get broadcastTimezone => 'Time zone';
+  String get broadcastTimezone => 'Zaman dilimi';
 
   @override
-  String get broadcastFideRatingCategory => 'FIDE rating category';
+  String get broadcastFideRatingCategory => 'FIDE derecelendirme kategorisi';
 
   @override
-  String get broadcastOptionalDetails => 'Optional details';
+  String get broadcastOptionalDetails => 'İsteğe bağlı ayrıntılar';
 
   @override
-  String get broadcastUpcomingBroadcasts => 'Upcoming broadcasts';
+  String get broadcastPastBroadcasts => 'Geçmiş yayınlar';
 
   @override
-  String get broadcastPastBroadcasts => 'Past broadcasts';
-
-  @override
-  String get broadcastAllBroadcastsByMonth => 'View all broadcasts by month';
+  String get broadcastAllBroadcastsByMonth => 'Tüm yayınları aylara göre görüntüleyin';
 
   @override
   String broadcastNbBroadcasts(int count) {
@@ -871,6 +865,9 @@ class AppLocalizationsTr extends AppLocalizations {
   String get preferencesInGameOnly => 'Sadece oyun sırasında';
 
   @override
+  String get preferencesExceptInGame => 'Except in-game';
+
+  @override
   String get preferencesChessClock => 'Satranç saati';
 
   @override
@@ -1010,6 +1007,9 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get preferencesBellNotificationSound => 'Çan bildirimi sesi';
+
+  @override
+  String get preferencesBlindfold => 'Körleme modu';
 
   @override
   String get puzzlePuzzles => 'Bulmacalar';
@@ -2319,7 +2319,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get gamesPlayed => 'Oynanmış oyunlar';
 
   @override
-  String get ok => 'OK';
+  String get ok => 'Tamam';
 
   @override
   String get cancel => 'İptal et';
@@ -5456,7 +5456,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String studyPerPage(String param) {
-    return '$param per page';
+    return 'Sayfa başına $param';
   }
 
   @override
@@ -5499,6 +5499,180 @@ class AppLocalizationsTr extends AppLocalizations {
       locale: localeName,
       other: 'PGN metninizi buraya yapıştırın, en fazla $count oyuna kadar',
       one: 'PGN metninizi buraya yapıştırın, en fazla $count oyuna kadar',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get timeagoJustNow => 'şu anda';
+
+  @override
+  String get timeagoRightNow => 'hemen şimdi';
+
+  @override
+  String get timeagoCompleted => 'tamamlanmış';
+
+  @override
+  String timeagoInNbSeconds(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count saniyede',
+      one: '$count saniyede',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbMinutes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count dakikada',
+      one: '$count dakikada',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbHours(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count saatte',
+      one: '$count saatte',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count günde',
+      one: '$count günde',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbWeeks(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count haftada',
+      one: '$count haftada',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbMonths(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count ayda',
+      one: '$count ayda',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbYears(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count yılda',
+      one: '$count yılda',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbMinutesAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count dakika önce',
+      one: '$count dakika önce',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbHoursAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count saat önce',
+      one: '$count saat önce',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbDaysAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count gün önce',
+      one: '$count gün önce',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbWeeksAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count hafta önce',
+      one: '$count hafta önce',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbMonthsAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count ay önce',
+      one: '$count ay önce',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbYearsAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count yıl önce',
+      one: '$count yıl önce',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbMinutesRemaining(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count dakika kaldı',
+      one: '$count dakika kaldı',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbHoursRemaining(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count saat kaldı',
+      one: '$count saat kaldı',
     );
     return '$_temp0';
   }

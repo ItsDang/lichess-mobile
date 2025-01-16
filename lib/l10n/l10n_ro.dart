@@ -1,5 +1,5 @@
+// ignore: unused_import
 import 'package:intl/intl.dart' as intl;
-
 import 'l10n.dart';
 
 // ignore_for_file: type=lint
@@ -13,9 +13,6 @@ class AppLocalizationsRo extends AppLocalizations {
 
   @override
   String get mobileAreYouSure => 'Ești sigur?';
-
-  @override
-  String get mobileBlindfoldMode => 'Legat la ochi';
 
   @override
   String get mobileCancelTakebackOffer => 'Anulați propunerea de revanșă';
@@ -133,7 +130,7 @@ class AppLocalizationsRo extends AppLocalizations {
   String get mobileSystemColors => 'Culori sistem';
 
   @override
-  String get mobileTheme => 'Theme';
+  String get mobileTheme => 'Tema';
 
   @override
   String get mobileToolsTab => 'Unelte';
@@ -557,7 +554,7 @@ class AppLocalizationsRo extends AppLocalizations {
   String get broadcastStandings => 'Clasament';
 
   @override
-  String get broadcastOfficialStandings => 'Official Standings';
+  String get broadcastOfficialStandings => 'Clasament oficial';
 
   @override
   String broadcastIframeHelp(String param) {
@@ -590,28 +587,25 @@ class AppLocalizationsRo extends AppLocalizations {
   String get broadcastScore => 'Scor';
 
   @override
-  String get broadcastAllTeams => 'All teams';
+  String get broadcastAllTeams => 'Toate echipele';
 
   @override
-  String get broadcastTournamentFormat => 'Tournament format';
+  String get broadcastTournamentFormat => 'Format turneu';
 
   @override
-  String get broadcastTournamentLocation => 'Tournament Location';
+  String get broadcastTournamentLocation => 'Locație turneu';
 
   @override
   String get broadcastTopPlayers => 'Top players';
 
   @override
-  String get broadcastTimezone => 'Time zone';
+  String get broadcastTimezone => 'Fus orar';
 
   @override
   String get broadcastFideRatingCategory => 'FIDE rating category';
 
   @override
   String get broadcastOptionalDetails => 'Optional details';
-
-  @override
-  String get broadcastUpcomingBroadcasts => 'Upcoming broadcasts';
 
   @override
   String get broadcastPastBroadcasts => 'Past broadcasts';
@@ -890,6 +884,9 @@ class AppLocalizationsRo extends AppLocalizations {
   String get preferencesInGameOnly => 'Doar în joc';
 
   @override
+  String get preferencesExceptInGame => 'Exceptând în timpul jocului';
+
+  @override
   String get preferencesChessClock => 'Ceasul de șah';
 
   @override
@@ -1029,6 +1026,9 @@ class AppLocalizationsRo extends AppLocalizations {
 
   @override
   String get preferencesBellNotificationSound => 'Sunet de notificare';
+
+  @override
+  String get preferencesBlindfold => 'Legat la ochi';
 
   @override
   String get puzzlePuzzles => 'Probleme de șah';
@@ -1675,7 +1675,7 @@ class AppLocalizationsRo extends AppLocalizations {
   String get puzzleThemeZugzwangDescription => 'Adversarul este limitat în mișcările pe care le poate face, iar toate mișcările îi înrăutățesc poziția.';
 
   @override
-  String get puzzleThemeMix => 'Amestec sănătos';
+  String get puzzleThemeMix => 'Mixt';
 
   @override
   String get puzzleThemeMixDescription => 'Un pic din toate. Nu știi la ce să te aștepți, așa că rămâi gata pentru orice! La fel ca în jocurile reale.';
@@ -5524,7 +5524,7 @@ class AppLocalizationsRo extends AppLocalizations {
 
   @override
   String studyPerPage(String param) {
-    return '$param per page';
+    return '$param pe pagină';
   }
 
   @override
@@ -5571,6 +5571,195 @@ class AppLocalizationsRo extends AppLocalizations {
       other: 'Lipiți textul PGN aici, până la $count meciuri',
       few: 'Lipiți textul PGN aici, până la $count meciuri',
       one: 'Lipiți textul PGN aici, până la $count meci',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get timeagoJustNow => 'chiar acum';
+
+  @override
+  String get timeagoRightNow => 'chiar acum';
+
+  @override
+  String get timeagoCompleted => 'completat';
+
+  @override
+  String timeagoInNbSeconds(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'în $count de secunde',
+      few: 'în $count secunde',
+      one: 'în $count secundă',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbMinutes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'în $count de minute',
+      few: 'în $count minute',
+      one: 'în $count minut',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbHours(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'în $count de ore',
+      few: 'în $count ore',
+      one: 'în $count oră',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'în $count de zile',
+      few: 'în $count zile',
+      one: 'în $count zi',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbWeeks(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'în $count de săptămâni',
+      few: 'în $count săptămâni',
+      one: 'în $count săptămână',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbMonths(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'în $count de luni',
+      few: 'în $count luni',
+      one: 'în $count lună',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbYears(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'în $count de ani',
+      few: 'în $count ani',
+      one: 'în $count an',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbMinutesAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'cu $count de minute în urmă',
+      few: 'cu $count minute în urmă',
+      one: 'cu $count minut în urmă',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbHoursAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'cu $count de ore în urmă',
+      few: 'cu $count ore în urmă',
+      one: 'cu $count oră în urmă',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbDaysAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'cu $count de zile în urmă',
+      few: 'cu $count zile în urmă',
+      one: 'cu $count zi în urmă',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbWeeksAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'cu $count de săptămâni în urmă',
+      few: 'cu $count săptămâni în urmă',
+      one: 'cu $count săptămână în urmă',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbMonthsAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'cu $count de luni în urmă',
+      few: 'cu $count luni în urmă',
+      one: 'cu $count lună în urmă',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbYearsAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'cu $count de ani în urmă',
+      few: 'cu $count ani în urmă',
+      one: 'cu $count an în urmă',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbMinutesRemaining(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count minute rămase',
+      few: '$count minute rămase',
+      one: '$count minut rămas',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbHoursRemaining(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count ore rămase',
+      few: '$count ore rămase',
+      one: '$count oră rămasă',
     );
     return '$_temp0';
   }

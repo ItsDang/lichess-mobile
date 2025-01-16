@@ -1,18 +1,15 @@
 import 'dart:convert';
 
-import 'package:dartchess/dartchess.dart';
 import 'package:deep_pick/deep_pick.dart';
 import 'package:fast_immutable_collections/fast_immutable_collections.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:http/http.dart';
 import 'package:lichess_mobile/src/model/common/id.dart';
-import 'package:lichess_mobile/src/model/settings/board_preferences.dart';
 import 'package:lichess_mobile/src/model/study/study.dart';
 import 'package:lichess_mobile/src/model/study/study_filter.dart';
 import 'package:lichess_mobile/src/model/study/study_list_paginator.dart';
 import 'package:lichess_mobile/src/network/http.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:share_plus/share_plus.dart';
 
 part 'study_repository.g.dart';
 
@@ -38,14 +35,8 @@ class StudyRepository {
     );
   }
 
-  Future<StudyList> searchStudies({
-    required String query,
-    int page = 1,
-  }) {
-    return _requestStudies(
-      path: 'search',
-      queryParameters: {'page': page.toString(), 'q': query},
-    );
+  Future<StudyList> searchStudies({required String query, int page = 1}) {
+    return _requestStudies(path: 'search', queryParameters: {'page': page.toString(), 'q': query});
   }
 
   Future<StudyList> _requestStudies({
@@ -53,22 +44,18 @@ class StudyRepository {
     required Map<String, String> queryParameters,
   }) {
     return client.readJson(
-      Uri(
-        path: '/study/$path',
-        queryParameters: queryParameters,
-      ),
+      Uri(path: '/study/$path', queryParameters: queryParameters),
       headers: {'Accept': 'application/json'},
       mapper: (Map<String, dynamic> json) {
-        final paginator =
-            pick(json, 'paginator').asMapOrThrow<String, dynamic>();
+        final paginator = pick(json, 'paginator').asMapOrThrow<String, dynamic>();
 
         return (
-          studies: pick(paginator, 'currentPageResults')
-              .asListOrThrow(
-                (pick) => StudyPageData.fromJson(pick.asMapOrThrow()),
-              )
-              .toIList(),
-          nextPage: pick(paginator, 'nextPage').asIntOrNull()
+          studies:
+              pick(
+                paginator,
+                'currentPageResults',
+              ).asListOrThrow((pick) => StudyPageData.fromJson(pick.asMapOrThrow())).toIList(),
+          nextPage: pick(paginator, 'nextPage').asIntOrNull(),
         );
       },
     );
@@ -81,9 +68,7 @@ class StudyRepository {
     final study = await client.readJson(
       Uri(
         path: (chapterId != null) ? '/study/$id/$chapterId' : '/study/$id',
-        queryParameters: {
-          'chapters': '1',
-        },
+        queryParameters: {'chapters': '1'},
       ),
       headers: {'Accept': 'application/json'},
       mapper: Study.fromServerJson,
@@ -104,30 +89,5 @@ class StudyRepository {
     );
 
     return utf8.decode(pgnBytes);
-  }
-
-  /// Fetches the GIF animation of a study chapter.
-  Future<XFile> chapterGif(
-    StudyId id,
-    StudyChapterId chapterId,
-    Side orientation,
-  ) async {
-    final boardTheme = ref.read(boardPreferencesProvider).boardTheme;
-    final pieceTheme = ref.read(boardPreferencesProvider).pieceSet;
-    final resp = await client
-        .get(
-          lichessUri(
-            '/study/$id/$chapterId.gif',
-            {
-              'theme': boardTheme.name,
-              'piece': pieceTheme.name,
-            },
-          ),
-        )
-        .timeout(const Duration(seconds: 1));
-    if (resp.statusCode != 200) {
-      throw Exception('Failed to get GIF');
-    }
-    return XFile.fromData(resp.bodyBytes, mimeType: 'image/gif');
   }
 }

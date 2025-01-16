@@ -1,5 +1,5 @@
+// ignore: unused_import
 import 'package:intl/intl.dart' as intl;
-
 import 'l10n.dart';
 
 // ignore_for_file: type=lint
@@ -13,9 +13,6 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String get mobileAreYouSure => 'בטוח?';
-
-  @override
-  String get mobileBlindfoldMode => 'משחק עיוור';
 
   @override
   String get mobileCancelTakebackOffer => 'ביטול ההצעה להחזיר את המהלך האחרון';
@@ -133,7 +130,7 @@ class AppLocalizationsHe extends AppLocalizations {
   String get mobileSystemColors => 'צבעי מערכת ההפעלה';
 
   @override
-  String get mobileTheme => 'Theme';
+  String get mobileTheme => 'עיצוב';
 
   @override
   String get mobileToolsTab => 'כלים';
@@ -575,7 +572,7 @@ class AppLocalizationsHe extends AppLocalizations {
   String get broadcastStandings => 'תוצאות';
 
   @override
-  String get broadcastOfficialStandings => 'Official Standings';
+  String get broadcastOfficialStandings => 'טבלת מובילים רשמית';
 
   @override
   String broadcastIframeHelp(String param) {
@@ -608,34 +605,31 @@ class AppLocalizationsHe extends AppLocalizations {
   String get broadcastScore => 'ניקוד';
 
   @override
-  String get broadcastAllTeams => 'All teams';
+  String get broadcastAllTeams => 'כל הקבוצות';
 
   @override
-  String get broadcastTournamentFormat => 'Tournament format';
+  String get broadcastTournamentFormat => 'שיטת הטורניר';
 
   @override
-  String get broadcastTournamentLocation => 'Tournament Location';
+  String get broadcastTournamentLocation => 'מיקום הטורניר';
 
   @override
-  String get broadcastTopPlayers => 'Top players';
+  String get broadcastTopPlayers => 'שחקני צמרת';
 
   @override
-  String get broadcastTimezone => 'Time zone';
+  String get broadcastTimezone => 'אזור זמן';
 
   @override
-  String get broadcastFideRatingCategory => 'FIDE rating category';
+  String get broadcastFideRatingCategory => 'קטגוריית דירוג FIDE';
 
   @override
-  String get broadcastOptionalDetails => 'Optional details';
+  String get broadcastOptionalDetails => 'פרטים אופציונאליים';
 
   @override
-  String get broadcastUpcomingBroadcasts => 'Upcoming broadcasts';
+  String get broadcastPastBroadcasts => 'הקרנות עבר';
 
   @override
-  String get broadcastPastBroadcasts => 'Past broadcasts';
-
-  @override
-  String get broadcastAllBroadcastsByMonth => 'View all broadcasts by month';
+  String get broadcastAllBroadcastsByMonth => 'צפו בכל ההקרנות לפי חודש';
 
   @override
   String broadcastNbBroadcasts(int count) {
@@ -909,6 +903,9 @@ class AppLocalizationsHe extends AppLocalizations {
   String get preferencesInGameOnly => 'רק במהלך המשחק';
 
   @override
+  String get preferencesExceptInGame => 'למעט בזמן משחק';
+
+  @override
   String get preferencesChessClock => 'שעון השחמט';
 
   @override
@@ -1048,6 +1045,9 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String get preferencesBellNotificationSound => 'השמע צליל עבור התראות פעמון';
+
+  @override
+  String get preferencesBlindfold => 'משחק עיוור';
 
   @override
   String get puzzlePuzzles => 'פאזלים';
@@ -1731,7 +1731,7 @@ class AppLocalizationsHe extends AppLocalizations {
   String get settingsClosingIsDefinitive => 'הסגירה היא סופית. אין דרך חזרה. האם את/ה בטוח/ה?';
 
   @override
-  String get settingsCantOpenSimilarAccount => 'לא תוכל/י לפתוח חשבון חדש עם אותו השם, אפילו בשינוי אותיות קטנות לגדולות והפוך. ';
+  String get settingsCantOpenSimilarAccount => 'לא תוכל/י לפתוח חשבון חדש עם אותו השם, אפילו בשינוי אותיות קטנות לגדולות והפוך.';
 
   @override
   String get settingsChangedMindDoNotCloseAccount => 'שיניתי את דעתי, אל תסגרו את החשבון שלי';
@@ -5592,7 +5592,7 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String studyPerPage(String param) {
-    return '$param per page';
+    return '$param לכל עמוד';
   }
 
   @override
@@ -5643,6 +5643,210 @@ class AppLocalizationsHe extends AppLocalizations {
       many: 'הדבק את טקסט הPGN שלך כאן, עד ל$count משחקים',
       two: 'הדבק את טקסט הPGN שלך כאן, עד ל$count משחקים',
       one: 'הדבק את טקסט הPGN שלך כאן, עד למשחק $count',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get timeagoJustNow => 'בדיוק עכשיו';
+
+  @override
+  String get timeagoRightNow => 'עכשיו';
+
+  @override
+  String get timeagoCompleted => 'הושלם';
+
+  @override
+  String timeagoInNbSeconds(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'עוד $count שניות',
+      many: 'עוד $count שניות',
+      two: 'עוד $count שניות',
+      one: 'עוד שנייה',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbMinutes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'עוד $count דקות',
+      many: 'עוד $count דקות',
+      two: 'עוד $count דקות',
+      one: 'עוד דקה $count',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbHours(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'עוד $count שעות',
+      many: 'עוד $count שעות',
+      two: 'עוד $count שעות',
+      one: 'עוד שעה $count',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'עוד $count ימים',
+      many: 'עוד $count ימים',
+      two: 'עוד $count ימים',
+      one: 'עוד יום $count',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbWeeks(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'עוד $count שבועות',
+      many: 'עוד $count שבועות',
+      two: 'עוד $count שבועות',
+      one: 'עוד שבוע $count',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbMonths(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'עוד $count חודשים',
+      many: 'עוד $count חודשים',
+      two: 'עוד $count חודשים',
+      one: 'עוד חודש $count',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbYears(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'עוד $count שנים',
+      many: 'עוד $count שנים',
+      two: 'עוד $count שנים',
+      one: 'עוד שנה $count',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbMinutesAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'לפני $count דקות',
+      many: 'לפני $count דקות',
+      two: 'לפני $count דקות',
+      one: 'לפני דקה $count',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbHoursAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'לפני $count שעות',
+      many: 'לפני $count שעות',
+      two: 'לפני $count שעות',
+      one: 'לפני שעה $count',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbDaysAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'לפני $count ימים',
+      many: 'לפני $count ימים',
+      two: 'לפני $count ימים',
+      one: 'לפני יום $count',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbWeeksAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'לפני $count שבועות',
+      many: 'לפני $count שבועות',
+      two: 'לפני $count שבועות',
+      one: 'לפני שבוע $count',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbMonthsAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'לפני $count חודשים',
+      many: 'לפני $count חודשים',
+      two: 'לפני $count חודשים',
+      one: 'לפני חודש $count',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbYearsAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'לפני $count שנים',
+      many: 'לפני $count שנים',
+      two: 'לפני $count שנים',
+      one: 'לפני שנה $count',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbMinutesRemaining(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count דקות נותרו',
+      many: '$count דקות נותרו',
+      two: '$count דקות נותרו',
+      one: 'דקה $count נותרה',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbHoursRemaining(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count שעות נותרו',
+      many: '$count שעות נותרו',
+      two: '$count שעות נותרו',
+      one: 'שעה $count נותרה',
     );
     return '$_temp0';
   }

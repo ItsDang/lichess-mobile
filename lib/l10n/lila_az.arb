@@ -432,7 +432,6 @@
   "replayMode": "Təkrar rejimi",
   "realtimeReplay": "Gerçək zamanlı",
   "byCPL": "CPL üzrə",
-  "openStudy": "Çalışmanı aç",
   "enable": "Aktiv et",
   "bestMoveArrow": "Ən yaxşı gedişi göstər",
   "showVariationArrows": "Variasiya oxlarını göstərin",
@@ -635,7 +634,6 @@
   "block": "Blok",
   "blocked": "Bloklanıb",
   "unblock": "Blokdan çıxart",
-  "followsYou": "Səni izləyir",
   "xStartedFollowingY": "{param1} {param2} adlı oyunçunu izləməyə başladı",
   "more": "Daha çox",
   "memberSince": "Üzvlük tarixi",
@@ -1249,5 +1247,7 @@
   "studyNbChapters": "{count, plural, =1{{count} Fəsil} other{{count} Fəsil}}",
   "studyNbGames": "{count, plural, =1{{count} Oyun} other{{count} Oyun}}",
   "studyNbMembers": "{count, plural, =1{{count} Üzv} other{{count} Üzv}}",
-  "studyPasteYourPgnTextHereUpToNbGames": "{count, plural, =1{PGN mətninizi bura yapışdırın, ən çox {count} oyuna qədər} other{PGN mətninizi bura yapışdırın, ən çox {count} oyuna qədər}}"
+  "studyPasteYourPgnTextHereUpToNbGames": "{count, plural, =1{PGN mətninizi bura yapışdırın, ən çox {count} oyuna qədər} other{PGN mətninizi bura yapışdırın, ən çox {count} oyuna qədər}}",
+  "timeagoJustNow": "elə indi",
+  "timeagoRightNow": "indicə"
 }

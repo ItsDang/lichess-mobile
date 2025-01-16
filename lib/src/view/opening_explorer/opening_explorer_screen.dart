@@ -4,12 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:lichess_mobile/src/constants.dart';
 import 'package:lichess_mobile/src/model/analysis/analysis_controller.dart';
+import 'package:lichess_mobile/src/model/common/chess.dart';
 import 'package:lichess_mobile/src/model/opening_explorer/opening_explorer.dart';
 import 'package:lichess_mobile/src/model/opening_explorer/opening_explorer_preferences.dart';
 import 'package:lichess_mobile/src/styles/styles.dart';
 import 'package:lichess_mobile/src/utils/l10n_context.dart';
 import 'package:lichess_mobile/src/utils/screen.dart';
 import 'package:lichess_mobile/src/view/analysis/analysis_board.dart';
+import 'package:lichess_mobile/src/view/opening_explorer/opening_explorer_settings.dart';
 import 'package:lichess_mobile/src/view/opening_explorer/opening_explorer_view.dart';
 import 'package:lichess_mobile/src/widgets/adaptive_bottom_sheet.dart';
 import 'package:lichess_mobile/src/widgets/bottom_bar.dart';
@@ -18,8 +20,6 @@ import 'package:lichess_mobile/src/widgets/buttons.dart';
 import 'package:lichess_mobile/src/widgets/feedback.dart';
 import 'package:lichess_mobile/src/widgets/move_list.dart';
 import 'package:lichess_mobile/src/widgets/platform.dart';
-
-import 'opening_explorer_settings.dart';
 
 const _kTabletBoardRadius = BorderRadius.all(Radius.circular(4.0));
 
@@ -35,39 +35,35 @@ class OpeningExplorerScreen extends ConsumerWidget {
     final body = switch (ref.watch(ctrlProvider)) {
       AsyncData(value: final state) => _Body(options: options, state: state),
       AsyncError(:final error) => Center(
-          child: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Text(error.toString()),
-          ),
-        ),
+        child: Padding(padding: const EdgeInsets.all(16.0), child: Text(error.toString())),
+      ),
       _ => const CenterLoadingIndicator(),
     };
 
     return PlatformWidget(
-      androidBuilder: (_) => Scaffold(
-        body: body,
-        appBar: AppBar(
-          title: Text(context.l10n.openingExplorer),
-          bottom: _MoveList(options: options),
-        ),
-      ),
-      iosBuilder: (_) => CupertinoPageScaffold(
-        navigationBar: CupertinoNavigationBar(
-          middle: Text(context.l10n.openingExplorer),
-          automaticBackgroundVisibility: false,
-          border: null,
-        ),
-        child: body,
-      ),
+      androidBuilder:
+          (_) => Scaffold(
+            body: body,
+            appBar: AppBar(
+              title: Text(context.l10n.openingExplorer),
+              bottom: _MoveList(options: options),
+            ),
+          ),
+      iosBuilder:
+          (_) => CupertinoPageScaffold(
+            navigationBar: CupertinoNavigationBar(
+              middle: Text(context.l10n.openingExplorer),
+              automaticBackgroundVisibility: false,
+              border: null,
+            ),
+            child: body,
+          ),
     );
   }
 }
 
 class _Body extends ConsumerWidget {
-  const _Body({
-    required this.options,
-    required this.state,
-  });
+  const _Body({required this.options, required this.state});
 
   final AnalysisOptions options;
   final AnalysisState state;
@@ -82,28 +78,29 @@ class _Body extends ConsumerWidget {
         children: [
           if (Theme.of(context).platform == TargetPlatform.iOS)
             Padding(
-              padding: isTablet
-                  ? const EdgeInsets.symmetric(
-                      horizontal: kTabletBoardTableSidePadding,
-                    )
-                  : EdgeInsets.zero,
+              padding:
+                  isTablet
+                      ? const EdgeInsets.symmetric(horizontal: kTabletBoardTableSidePadding)
+                      : EdgeInsets.zero,
               child: _MoveList(options: options),
             ),
           Expanded(
             child: LayoutBuilder(
               builder: (context, constraints) {
-                final orientation = constraints.maxWidth > constraints.maxHeight
-                    ? Orientation.landscape
-                    : Orientation.portrait;
+                final orientation =
+                    constraints.maxWidth > constraints.maxHeight
+                        ? Orientation.landscape
+                        : Orientation.portrait;
                 if (orientation == Orientation.landscape) {
-                  final sideWidth = constraints.biggest.longestSide -
-                      constraints.biggest.shortestSide;
-                  final defaultBoardSize = constraints.biggest.shortestSide -
-                      (kTabletBoardTableSidePadding * 2);
-                  final boardSize = sideWidth >= 250
-                      ? defaultBoardSize
-                      : constraints.biggest.longestSide / kGoldenRatio -
-                          (kTabletBoardTableSidePadding * 2);
+                  final sideWidth =
+                      constraints.biggest.longestSide - constraints.biggest.shortestSide;
+                  final defaultBoardSize =
+                      constraints.biggest.shortestSide - (kTabletBoardTableSidePadding * 2);
+                  final boardSize =
+                      sideWidth >= 250
+                          ? defaultBoardSize
+                          : constraints.biggest.longestSide / kGoldenRatio -
+                              (kTabletBoardTableSidePadding * 2);
                   return Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -128,21 +125,14 @@ class _Body extends ConsumerWidget {
                             Expanded(
                               child: PlatformCard(
                                 clipBehavior: Clip.hardEdge,
-                                borderRadius: const BorderRadius.all(
-                                  Radius.circular(4.0),
-                                ),
-                                margin: const EdgeInsets.all(
-                                  kTabletBoardTableSidePadding,
-                                ),
+                                borderRadius: const BorderRadius.all(Radius.circular(4.0)),
+                                margin: const EdgeInsets.all(kTabletBoardTableSidePadding),
                                 semanticContainer: false,
                                 child: OpeningExplorerView(
                                   position: state.position,
                                   onMoveSelected: (move) {
                                     ref
-                                        .read(
-                                          analysisControllerProvider(options)
-                                              .notifier,
-                                        )
+                                        .read(analysisControllerProvider(options).notifier)
                                         .onUserMove(move);
                                   },
                                 ),
@@ -155,20 +145,18 @@ class _Body extends ConsumerWidget {
                   );
                 } else {
                   final defaultBoardSize = constraints.biggest.shortestSide;
-                  final remainingHeight =
-                      constraints.maxHeight - defaultBoardSize;
-                  final isSmallScreen =
-                      remainingHeight < kSmallRemainingHeightLeftBoardThreshold;
-                  final boardSize = isTablet || isSmallScreen
-                      ? defaultBoardSize - kTabletBoardTableSidePadding * 2
-                      : defaultBoardSize;
+                  final remainingHeight = constraints.maxHeight - defaultBoardSize;
+                  final isSmallScreen = remainingHeight < kSmallRemainingHeightLeftBoardThreshold;
+                  final boardSize =
+                      isTablet || isSmallScreen
+                          ? defaultBoardSize - kTabletBoardTableSidePadding * 2
+                          : defaultBoardSize;
 
                   return ListView(
-                    padding: isTablet
-                        ? const EdgeInsets.symmetric(
-                            horizontal: kTabletBoardTableSidePadding,
-                          )
-                        : EdgeInsets.zero,
+                    padding:
+                        isTablet
+                            ? const EdgeInsets.symmetric(horizontal: kTabletBoardTableSidePadding)
+                            : EdgeInsets.zero,
                     children: [
                       GestureDetector(
                         // disable scrolling when dragging the board
@@ -181,12 +169,12 @@ class _Body extends ConsumerWidget {
                       ),
                       OpeningExplorerView(
                         position: state.position,
+                        opening:
+                            state.currentNode.isRoot
+                                ? LightOpening(eco: '', name: context.l10n.startPosition)
+                                : state.currentNode.opening ?? state.currentBranchOpening,
                         onMoveSelected: (move) {
-                          ref
-                              .read(
-                                analysisControllerProvider(options).notifier,
-                              )
-                              .onUserMove(move);
+                          ref.read(analysisControllerProvider(options).notifier).onUserMove(move);
                         },
                         scrollable: false,
                       ),
@@ -226,17 +214,13 @@ class _MoveList extends ConsumerWidget implements PreferredSizeWidget {
         final currentMoveIndex = state.currentNode.position.ply;
 
         return MoveList(
-          inlineDecoration: Theme.of(context).platform == TargetPlatform.iOS
-              ? BoxDecoration(
-                  color: Styles.cupertinoAppBarColor.resolveFrom(context),
-                  border: const Border(
-                    bottom: BorderSide(
-                      color: Color(0x4D000000),
-                      width: 0.0,
-                    ),
-                  ),
-                )
-              : null,
+          inlineDecoration:
+              Theme.of(context).platform == TargetPlatform.iOS
+                  ? BoxDecoration(
+                    color: Styles.cupertinoAppBarColor.resolveFrom(context),
+                    border: const Border(bottom: BorderSide(color: Color(0x4D000000), width: 0.0)),
+                  )
+                  : null,
           type: MoveListType.inline,
           slicedMoves: slicedMoves,
           currentMoveIndex: currentMoveIndex,
@@ -257,13 +241,10 @@ class _BottomBar extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final db = ref
-        .watch(openingExplorerPreferencesProvider.select((value) => value.db));
+    final db = ref.watch(openingExplorerPreferencesProvider.select((value) => value.db));
     final ctrlProvider = analysisControllerProvider(options);
-    final canGoBack =
-        ref.watch(ctrlProvider.select((value) => value.requireValue.canGoBack));
-    final canGoNext =
-        ref.watch(ctrlProvider.select((value) => value.requireValue.canGoNext));
+    final canGoBack = ref.watch(ctrlProvider.select((value) => value.requireValue.canGoBack));
+    final canGoNext = ref.watch(ctrlProvider.select((value) => value.requireValue.canGoNext));
 
     final dbLabel = switch (db) {
       OpeningDatabase.master => 'Masters',
@@ -271,18 +252,20 @@ class _BottomBar extends ConsumerWidget {
       OpeningDatabase.player => context.l10n.player,
     };
 
-    return BottomBar(
+    return PlatformBottomBar(
+      transparentCupertinoBar: false,
       children: [
         BottomBarButton(
           label: dbLabel,
           showLabel: true,
-          onTap: () => showAdaptiveBottomSheet<void>(
-            context: context,
-            isScrollControlled: true,
-            showDragHandle: true,
-            isDismissible: true,
-            builder: (_) => OpeningExplorerSettings(options),
-          ),
+          onTap:
+              () => showAdaptiveBottomSheet<void>(
+                context: context,
+                isScrollControlled: true,
+                showDragHandle: true,
+                isDismissible: true,
+                builder: (_) => const OpeningExplorerSettings(),
+              ),
           icon: Icons.tune,
         ),
         BottomBarButton(

@@ -1,5 +1,5 @@
+// ignore: unused_import
 import 'package:intl/intl.dart' as intl;
-
 import 'l10n.dart';
 
 // ignore_for_file: type=lint
@@ -13,9 +13,6 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get mobileAreYouSure => 'Weet je het zeker?';
-
-  @override
-  String get mobileBlindfoldMode => 'Geblinddoekt';
 
   @override
   String get mobileCancelTakebackOffer => 'Terugnameaanbod annuleren';
@@ -133,7 +130,7 @@ class AppLocalizationsNl extends AppLocalizations {
   String get mobileSystemColors => 'Systeemkleuren';
 
   @override
-  String get mobileTheme => 'Theme';
+  String get mobileTheme => 'Thema';
 
   @override
   String get mobileToolsTab => 'Gereedschap';
@@ -539,7 +536,7 @@ class AppLocalizationsNl extends AppLocalizations {
   String get broadcastStandings => 'Klassement';
 
   @override
-  String get broadcastOfficialStandings => 'Official Standings';
+  String get broadcastOfficialStandings => 'Officiële standen';
 
   @override
   String broadcastIframeHelp(String param) {
@@ -572,34 +569,31 @@ class AppLocalizationsNl extends AppLocalizations {
   String get broadcastScore => 'Score';
 
   @override
-  String get broadcastAllTeams => 'All teams';
+  String get broadcastAllTeams => 'Alle teams';
 
   @override
-  String get broadcastTournamentFormat => 'Tournament format';
+  String get broadcastTournamentFormat => 'Toernooivorm';
 
   @override
-  String get broadcastTournamentLocation => 'Tournament Location';
+  String get broadcastTournamentLocation => 'Toernooilocatie';
 
   @override
-  String get broadcastTopPlayers => 'Top players';
+  String get broadcastTopPlayers => 'Topspelers';
 
   @override
-  String get broadcastTimezone => 'Time zone';
+  String get broadcastTimezone => 'Tijdzone';
 
   @override
-  String get broadcastFideRatingCategory => 'FIDE rating category';
+  String get broadcastFideRatingCategory => 'FIDE-rating categorie';
 
   @override
-  String get broadcastOptionalDetails => 'Optional details';
+  String get broadcastOptionalDetails => 'Optionele info';
 
   @override
-  String get broadcastUpcomingBroadcasts => 'Upcoming broadcasts';
+  String get broadcastPastBroadcasts => 'Afgelopen uitzendingen';
 
   @override
-  String get broadcastPastBroadcasts => 'Past broadcasts';
-
-  @override
-  String get broadcastAllBroadcastsByMonth => 'View all broadcasts by month';
+  String get broadcastAllBroadcastsByMonth => 'Alle uitzendingen per maand weergeven';
 
   @override
   String broadcastNbBroadcasts(int count) {
@@ -871,6 +865,9 @@ class AppLocalizationsNl extends AppLocalizations {
   String get preferencesInGameOnly => 'Alleen tijdens partij';
 
   @override
+  String get preferencesExceptInGame => 'Uitgezonderd tijdens partijen';
+
+  @override
   String get preferencesChessClock => 'Schaakklok';
 
   @override
@@ -1010,6 +1007,9 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get preferencesBellNotificationSound => 'Meldingsgeluid';
+
+  @override
+  String get preferencesBlindfold => 'Geblinddoekt';
 
   @override
   String get puzzlePuzzles => 'Puzzels';
@@ -2379,7 +2379,7 @@ class AppLocalizationsNl extends AppLocalizations {
   String get standard => 'Standaard';
 
   @override
-  String get customPosition => 'Custom position';
+  String get customPosition => 'Aangepaste positie';
 
   @override
   String get unlimited => 'Onbeperkt';
@@ -5456,7 +5456,7 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String studyPerPage(String param) {
-    return '$param per page';
+    return '$param per pagina';
   }
 
   @override
@@ -5499,6 +5499,180 @@ class AppLocalizationsNl extends AppLocalizations {
       locale: localeName,
       other: 'Plak je PGN tekst hier, tot $count spellen mogelijk',
       one: 'Plak je PGN tekst hier, tot $count spel mogelijk',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get timeagoJustNow => 'zojuist';
+
+  @override
+  String get timeagoRightNow => 'op dit moment';
+
+  @override
+  String get timeagoCompleted => 'voltooid';
+
+  @override
+  String timeagoInNbSeconds(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'over $count seconden',
+      one: 'over $count seconde',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbMinutes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'over $count minuten',
+      one: 'over $count minuut',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbHours(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'over $count uur',
+      one: 'over $count uur',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'over $count dagen',
+      one: 'over $count dag',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbWeeks(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'over $count weken',
+      one: 'over $count week',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbMonths(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'over $count maanden',
+      one: 'over $count maand',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbYears(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'over $count jaren',
+      one: 'over $count jaar',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbMinutesAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count minuten geleden',
+      one: '$count minuut geleden',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbHoursAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count uur geleden',
+      one: '$count uur geleden',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbDaysAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count dagen geleden',
+      one: '$count dag geleden',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbWeeksAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count weken geleden',
+      one: '$count week geleden',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbMonthsAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count maanden geleden',
+      one: '$count maand geleden',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbYearsAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count jaar geleden',
+      one: '$count jaar geleden',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbMinutesRemaining(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count minuten resterend',
+      one: '$count minuut resterend',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbHoursRemaining(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count uur resterend',
+      one: '$count uur resterend',
     );
     return '$_temp0';
   }

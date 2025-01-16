@@ -1,5 +1,5 @@
+// ignore: unused_import
 import 'package:intl/intl.dart' as intl;
-
 import 'l10n.dart';
 
 // ignore_for_file: type=lint
@@ -9,13 +9,10 @@ class AppLocalizationsBs extends AppLocalizations {
   AppLocalizationsBs([String locale = 'bs']) : super(locale);
 
   @override
-  String get mobileAllGames => 'All games';
+  String get mobileAllGames => 'Sve partije';
 
   @override
   String get mobileAreYouSure => 'Are you sure?';
-
-  @override
-  String get mobileBlindfoldMode => 'Blindfold';
 
   @override
   String get mobileCancelTakebackOffer => 'Cancel takeback offer';
@@ -610,9 +607,6 @@ class AppLocalizationsBs extends AppLocalizations {
   String get broadcastOptionalDetails => 'Optional details';
 
   @override
-  String get broadcastUpcomingBroadcasts => 'Upcoming broadcasts';
-
-  @override
   String get broadcastPastBroadcasts => 'Past broadcasts';
 
   @override
@@ -889,6 +883,9 @@ class AppLocalizationsBs extends AppLocalizations {
   String get preferencesInGameOnly => 'Samo unutar igre';
 
   @override
+  String get preferencesExceptInGame => 'Except in-game';
+
+  @override
   String get preferencesChessClock => 'Sat';
 
   @override
@@ -1028,6 +1025,9 @@ class AppLocalizationsBs extends AppLocalizations {
 
   @override
   String get preferencesBellNotificationSound => 'Zvuk obavještenja';
+
+  @override
+  String get preferencesBlindfold => 'Blindfold';
 
   @override
   String get puzzlePuzzles => 'Problemi';
@@ -5570,6 +5570,193 @@ class AppLocalizationsBs extends AppLocalizations {
       other: 'Ovdje zalijepite svoj PGN tekst, do $count partija',
       few: 'Ovdje zalijepite svoj PGN tekst, do $count partije',
       one: 'Ovdje zalijepite svoj PGN tekst, do $count partije',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get timeagoJustNow => 'upravo sada';
+
+  @override
+  String get timeagoRightNow => 'upravo sada';
+
+  @override
+  String get timeagoCompleted => 'completed';
+
+  @override
+  String timeagoInNbSeconds(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'za $count sekundi',
+      few: 'za $count sekunde',
+      one: 'za $count sekundu',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbMinutes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'za $count minuta',
+      few: 'za $count minute',
+      one: 'za $count minutu',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbHours(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'za $count sati',
+      few: 'za $count sata',
+      one: 'za $count sat',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'za $count dana',
+      few: 'za $count dana',
+      one: 'za $count dan',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbWeeks(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'za $count sedmica',
+      few: 'za $count sedmice',
+      one: 'za $count sedmicu',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbMonths(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'za $count mjeseci',
+      few: 'za $count mjeseca',
+      one: 'za $count mjesec',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbYears(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'za $count godina',
+      few: 'za $count godine',
+      one: 'za $count godinu',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbMinutesAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'prije $count minuta',
+      few: 'prije $count minute',
+      one: 'prije $count minutu',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbHoursAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'prije $count sati',
+      few: 'prije $count sata',
+      one: 'prije $count sat',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbDaysAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'prije $count dana',
+      few: 'prije $count dana',
+      one: 'prije $count dan',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbWeeksAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'prije $count sedmica',
+      few: 'prije $count sedmice',
+      one: 'prije $count sedmicu',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbMonthsAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'prije $count mjeseci',
+      few: 'prije $count mjeseca',
+      one: 'prije $count mjesec',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbYearsAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'prije $count godina',
+      few: 'prije $count godine',
+      one: 'prije $count godinu',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbMinutesRemaining(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count minutes remaining',
+      one: '$count minute remaining',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbHoursRemaining(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count hours remaining',
+      one: '$count hour remaining',
     );
     return '$_temp0';
   }

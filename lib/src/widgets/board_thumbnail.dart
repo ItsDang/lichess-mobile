@@ -15,18 +15,15 @@ class BoardThumbnail extends ConsumerStatefulWidget {
     this.footer,
     this.lastMove,
     this.onTap,
-    this.animationDuration,
+    this.animationDuration = const Duration(milliseconds: 200),
   });
 
-  const BoardThumbnail.loading({
-    required this.size,
-    this.header,
-    this.footer,
-  })  : orientation = Side.white,
-        fen = kInitialFEN,
-        lastMove = null,
-        onTap = null,
-        animationDuration = null;
+  const BoardThumbnail.loading({required this.size, this.header, this.footer})
+    : orientation = Side.white,
+      fen = kInitialFEN,
+      lastMove = null,
+      animationDuration = const Duration(milliseconds: 200),
+      onTap = null;
 
   /// Size of the board.
   final double size;
@@ -48,8 +45,8 @@ class BoardThumbnail extends ConsumerStatefulWidget {
 
   final GestureTapCallback? onTap;
 
-  /// Optionally animate changes to the board by the specified duration.
-  final Duration? animationDuration;
+  /// Animate changes to the board by the specified duration.
+  final Duration animationDuration;
 
   @override
   _BoardThumbnailState createState() => _BoardThumbnailState();
@@ -72,56 +69,45 @@ class _BoardThumbnailState extends ConsumerState<BoardThumbnail> {
   Widget build(BuildContext context) {
     final boardPrefs = ref.watch(boardPreferencesProvider);
 
-    final board = widget.animationDuration != null
-        ? Chessboard.fixed(
-            size: widget.size,
-            fen: widget.fen,
-            orientation: widget.orientation,
-            lastMove: widget.lastMove as NormalMove?,
-            settings: ChessboardSettings(
-              enableCoordinates: false,
-              borderRadius: const BorderRadius.all(Radius.circular(4.0)),
-              boxShadow: boardShadows,
-              animationDuration: widget.animationDuration!,
-              pieceAssets: boardPrefs.pieceSet.assets,
-              colorScheme: boardPrefs.boardTheme.colors,
-            ),
-          )
-        : StaticChessboard(
-            size: widget.size,
-            fen: widget.fen,
-            orientation: widget.orientation,
-            lastMove: widget.lastMove as NormalMove?,
-            enableCoordinates: false,
-            borderRadius: const BorderRadius.all(Radius.circular(4.0)),
-            boxShadow: boardShadows,
-            pieceAssets: boardPrefs.pieceSet.assets,
-            colorScheme: boardPrefs.boardTheme.colors,
-          );
+    final board = StaticChessboard(
+      size: widget.size,
+      fen: widget.fen,
+      orientation: widget.orientation,
+      lastMove: widget.lastMove as NormalMove?,
+      enableCoordinates: false,
+      borderRadius: const BorderRadius.all(Radius.circular(4.0)),
+      boxShadow: boardShadows,
+      pieceAssets: boardPrefs.pieceSet.assets,
+      colorScheme: boardPrefs.boardTheme.colors,
+      animationDuration: widget.animationDuration,
+      hue: boardPrefs.hue,
+      brightness: boardPrefs.brightness,
+    );
 
-    final maybeTappableBoard = widget.onTap != null
-        ? GestureDetector(
-            onTap: widget.onTap,
-            onTapDown: (_) => _onTapDown(),
-            onTapCancel: _onTapCancel,
-            onTapUp: (_) => _onTapCancel(),
-            child: AnimatedScale(
-              scale: scale,
-              duration: const Duration(milliseconds: 100),
-              child: board,
-            ),
-          )
-        : board;
+    final maybeTappableBoard =
+        widget.onTap != null
+            ? GestureDetector(
+              onTap: widget.onTap,
+              onTapDown: (_) => _onTapDown(),
+              onTapCancel: _onTapCancel,
+              onTapUp: (_) => _onTapCancel(),
+              child: AnimatedScale(
+                scale: scale,
+                duration: const Duration(milliseconds: 100),
+                child: board,
+              ),
+            )
+            : board;
 
     return widget.header != null || widget.footer != null
         ? Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              if (widget.header != null) widget.header!,
-              maybeTappableBoard,
-              if (widget.footer != null) widget.footer!,
-            ],
-          )
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            if (widget.header != null) widget.header!,
+            maybeTappableBoard,
+            if (widget.footer != null) widget.footer!,
+          ],
+        )
         : maybeTappableBoard;
   }
 }

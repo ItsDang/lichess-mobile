@@ -1,5 +1,5 @@
+// ignore: unused_import
 import 'package:intl/intl.dart' as intl;
-
 import 'l10n.dart';
 
 // ignore_for_file: type=lint
@@ -13,9 +13,6 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get mobileAreYouSure => 'Ви впевнені?';
-
-  @override
-  String get mobileBlindfoldMode => 'Наосліп';
 
   @override
   String get mobileCancelTakebackOffer => 'Скасувати пропозицію повернення ходу';
@@ -133,7 +130,7 @@ class AppLocalizationsUk extends AppLocalizations {
   String get mobileSystemColors => 'Системні кольори';
 
   @override
-  String get mobileTheme => 'Theme';
+  String get mobileTheme => 'Тема';
 
   @override
   String get mobileToolsTab => 'Інструм.';
@@ -532,25 +529,25 @@ class AppLocalizationsUk extends AppLocalizations {
   String get broadcastRecentTournaments => 'Нещодавні турніри';
 
   @override
-  String get broadcastOpenLichess => 'Open in Lichess';
+  String get broadcastOpenLichess => 'Відкрити в Lichess';
 
   @override
-  String get broadcastTeams => 'Teams';
+  String get broadcastTeams => 'Команди';
 
   @override
-  String get broadcastBoards => 'Boards';
+  String get broadcastBoards => 'Дошки';
 
   @override
-  String get broadcastOverview => 'Overview';
+  String get broadcastOverview => 'Огляд';
 
   @override
   String get broadcastSubscribeTitle => 'Subscribe to be notified when each round starts. You can toggle bell or push notifications for broadcasts in your account preferences.';
 
   @override
-  String get broadcastUploadImage => 'Upload tournament image';
+  String get broadcastUploadImage => 'Завантажити зображення турніру';
 
   @override
-  String get broadcastNoBoardsYet => 'No boards yet. These will appear once games are uploaded.';
+  String get broadcastNoBoardsYet => 'Ще немає дощок. Вони з\'являться, коли ігри будуть завантажені.';
 
   @override
   String broadcastBoardsCanBeLoaded(String param) {
@@ -563,23 +560,23 @@ class AppLocalizationsUk extends AppLocalizations {
   }
 
   @override
-  String get broadcastStartVerySoon => 'The broadcast will start very soon.';
+  String get broadcastStartVerySoon => 'Трансляція розпочнеться дуже скоро.';
 
   @override
-  String get broadcastNotYetStarted => 'The broadcast has not yet started.';
+  String get broadcastNotYetStarted => 'Трансляція ще не розпочалася.';
 
   @override
   String get broadcastOfficialWebsite => 'Офіційний вебсайт';
 
   @override
-  String get broadcastStandings => 'Standings';
+  String get broadcastStandings => 'Турнірна таблиця';
 
   @override
-  String get broadcastOfficialStandings => 'Official Standings';
+  String get broadcastOfficialStandings => 'Офіційна турнірна таблиця';
 
   @override
   String broadcastIframeHelp(String param) {
-    return 'More options on the $param';
+    return 'Більше опцій на $param';
   }
 
   @override
@@ -591,48 +588,45 @@ class AppLocalizationsUk extends AppLocalizations {
   }
 
   @override
-  String get broadcastEmbedThisBroadcast => 'Embed this broadcast in your website';
+  String get broadcastEmbedThisBroadcast => 'Вбудувати цю трансляцію на своєму сайті';
 
   @override
   String broadcastEmbedThisRound(String param) {
-    return 'Embed $param in your website';
+    return 'Вбудувати $param на своєму сайті';
   }
 
   @override
-  String get broadcastRatingDiff => 'Rating diff';
+  String get broadcastRatingDiff => 'Різниця у рейтингу';
 
   @override
-  String get broadcastGamesThisTournament => 'Games in this tournament';
+  String get broadcastGamesThisTournament => 'Ігри в цьому турнірі';
 
   @override
-  String get broadcastScore => 'Score';
+  String get broadcastScore => 'Очки';
 
   @override
-  String get broadcastAllTeams => 'All teams';
+  String get broadcastAllTeams => 'Усі команди';
 
   @override
-  String get broadcastTournamentFormat => 'Tournament format';
+  String get broadcastTournamentFormat => 'Формат турніру';
 
   @override
-  String get broadcastTournamentLocation => 'Tournament Location';
+  String get broadcastTournamentLocation => 'Місце турніру';
 
   @override
-  String get broadcastTopPlayers => 'Top players';
+  String get broadcastTopPlayers => 'Найкращі гравці';
 
   @override
-  String get broadcastTimezone => 'Time zone';
+  String get broadcastTimezone => 'Часовий пояс';
 
   @override
-  String get broadcastFideRatingCategory => 'FIDE rating category';
+  String get broadcastFideRatingCategory => 'Категорія рейтингу FIDE';
 
   @override
-  String get broadcastOptionalDetails => 'Optional details';
+  String get broadcastOptionalDetails => 'Додаткові деталі';
 
   @override
-  String get broadcastUpcomingBroadcasts => 'Upcoming broadcasts';
-
-  @override
-  String get broadcastPastBroadcasts => 'Past broadcasts';
+  String get broadcastPastBroadcasts => 'Минулі трансляції';
 
   @override
   String get broadcastAllBroadcastsByMonth => 'View all broadcasts by month';
@@ -909,6 +903,9 @@ class AppLocalizationsUk extends AppLocalizations {
   String get preferencesInGameOnly => 'Лише під час гри';
 
   @override
+  String get preferencesExceptInGame => 'Except in-game';
+
+  @override
   String get preferencesChessClock => 'Шаховий годинник';
 
   @override
@@ -975,7 +972,7 @@ class AppLocalizationsUk extends AppLocalizations {
   String get preferencesInCorrespondenceGames => 'У заочних партіях';
 
   @override
-  String get preferencesCorrespondenceAndUnlimited => 'За листуванням та необмежені';
+  String get preferencesCorrespondenceAndUnlimited => 'Заочні та необмежені';
 
   @override
   String get preferencesConfirmResignationAndDrawOffers => 'Підтверджувати повернення ходу та пропозиції нічий';
@@ -1048,6 +1045,9 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get preferencesBellNotificationSound => 'Звук сповіщення';
+
+  @override
+  String get preferencesBlindfold => 'Наосліп';
 
   @override
   String get puzzlePuzzles => 'Задачі';
@@ -5592,7 +5592,7 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String studyPerPage(String param) {
-    return '$param per page';
+    return '$param на сторінку';
   }
 
   @override
@@ -5643,6 +5643,210 @@ class AppLocalizationsUk extends AppLocalizations {
       many: 'Вставте ваш PGN текст тут, до $count ігор',
       few: 'Вставте ваш PGN текст тут, до $count ігор',
       one: 'Вставте ваш PGN текст тут, до $count гри',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get timeagoJustNow => 'щойно';
+
+  @override
+  String get timeagoRightNow => 'зараз';
+
+  @override
+  String get timeagoCompleted => 'завершено';
+
+  @override
+  String timeagoInNbSeconds(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'за $count секунди',
+      many: 'за $count секунд',
+      few: 'за $count секунди',
+      one: 'за $count секунду',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbMinutes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'за $count хвилини',
+      many: 'за $count хвилин',
+      few: 'за $count хвилини',
+      one: 'за $count хвилину',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbHours(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'за $count години',
+      many: 'за $count годин',
+      few: 'за $count години',
+      one: 'за $count годину',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'за $count дня',
+      many: 'за $count днів',
+      few: 'за $count дні',
+      one: 'за $count день',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbWeeks(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'за $count тижня',
+      many: 'за $count тижнів',
+      few: 'за $count тижні',
+      one: 'за $count тиждень',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbMonths(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'за $count місяця',
+      many: 'за $count місяців',
+      few: 'за $count місяці',
+      one: 'за $count місяць',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbYears(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'за $count року',
+      many: 'за $count років',
+      few: 'за $count роки',
+      one: 'за $count рік',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbMinutesAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count хвилини тому',
+      many: '$count хвилин тому',
+      few: '$count хвилини тому',
+      one: '$count хвилину тому',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbHoursAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count години тому',
+      many: '$count годин тому',
+      few: '$count години тому',
+      one: '$count годину тому',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbDaysAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count дня тому',
+      many: '$count днів тому',
+      few: '$count дні тому',
+      one: '$count день тому',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbWeeksAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count тижня тому',
+      many: '$count тижнів тому',
+      few: '$count тижні тому',
+      one: '$count тиждень тому',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbMonthsAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count місяця тому',
+      many: '$count місяців тому',
+      few: '$count місяці тому',
+      one: '$count місяць тому',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbYearsAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count року тому',
+      many: '$count років тому',
+      few: '$count роки тому',
+      one: '$count рік тому',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbMinutesRemaining(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'залишилося $count хвилини',
+      many: 'залишилося $count хвилин',
+      few: 'залишилося $count хвилини',
+      one: 'залишилася $count хвилина',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbHoursRemaining(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'залишилося $count години',
+      many: 'залишилося $count годин',
+      few: 'залишилося $count години',
+      one: 'залишилася $count година',
     );
     return '$_temp0';
   }

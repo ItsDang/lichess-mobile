@@ -1,5 +1,5 @@
+// ignore: unused_import
 import 'package:intl/intl.dart' as intl;
-
 import 'l10n.dart';
 
 // ignore_for_file: type=lint
@@ -15,30 +15,27 @@ class AppLocalizationsHi extends AppLocalizations {
   String get mobileAreYouSure => 'क्या आप सुनिश्चित हैं?';
 
   @override
-  String get mobileBlindfoldMode => 'Blindfold';
-
-  @override
   String get mobileCancelTakebackOffer => 'Takeback प्रस्ताव रद्द करें';
 
   @override
-  String get mobileClearButton => 'Clear';
+  String get mobileClearButton => 'सब हटाएँ';
 
   @override
-  String get mobileCorrespondenceClearSavedMove => 'Clear saved move';
+  String get mobileCorrespondenceClearSavedMove => 'सहेजी गयी चाल हटाएं';
 
   @override
-  String get mobileCustomGameJoinAGame => 'Join a game';
+  String get mobileCustomGameJoinAGame => 'खेल में शामिल हों';
 
   @override
   String get mobileFeedbackButton => 'फीडबैक';
 
   @override
   String mobileGreeting(String param) {
-    return 'Hello, $param';
+    return 'नमस्कार, $param';
   }
 
   @override
-  String get mobileGreetingWithoutName => 'Hello';
+  String get mobileGreetingWithoutName => 'नमस्कार';
 
   @override
   String get mobileHideVariation => 'वेरिएशन छुपाए';
@@ -56,18 +53,18 @@ class AppLocalizationsHi extends AppLocalizations {
   String get mobileNoSearchResults => 'कोई परिणाम नहीं';
 
   @override
-  String get mobileNotFollowingAnyUser => 'You are not following any user.';
+  String get mobileNotFollowingAnyUser => 'आप किसी यूसर को फ़ाॅलो नहीं करते';
 
   @override
   String get mobileOkButton => 'ओके';
 
   @override
   String mobilePlayersMatchingSearchTerm(String param) {
-    return 'Players with \"$param\"';
+    return 'खिलाड़ी जिनके नाम हैं \"$param\"';
   }
 
   @override
-  String get mobilePrefMagnifyDraggedPiece => 'Magnify dragged piece';
+  String get mobilePrefMagnifyDraggedPiece => 'चले गये मोहरे को बड़ा करें';
 
   @override
   String get mobilePuzzleStormConfirmEndRun => 'Do you want to end this run?';
@@ -124,7 +121,7 @@ class AppLocalizationsHi extends AppLocalizations {
   String get mobileShowResult => 'Show result';
 
   @override
-  String get mobileShowVariations => 'वेरिएशन देखें';
+  String get mobileShowVariations => 'श्राे वेरिएशन देखें';
 
   @override
   String get mobileSomethingWentWrong => 'Something went wrong.';
@@ -593,9 +590,6 @@ class AppLocalizationsHi extends AppLocalizations {
   String get broadcastOptionalDetails => 'Optional details';
 
   @override
-  String get broadcastUpcomingBroadcasts => 'Upcoming broadcasts';
-
-  @override
   String get broadcastPastBroadcasts => 'Past broadcasts';
 
   @override
@@ -871,6 +865,9 @@ class AppLocalizationsHi extends AppLocalizations {
   String get preferencesInGameOnly => 'केवल खेल में';
 
   @override
+  String get preferencesExceptInGame => 'Except in-game';
+
+  @override
   String get preferencesChessClock => 'शतरंज की घड़ी';
 
   @override
@@ -1010,6 +1007,9 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get preferencesBellNotificationSound => 'Bell notification sound';
+
+  @override
+  String get preferencesBlindfold => 'Blindfold';
 
   @override
   String get puzzlePuzzles => 'पहेलियाँ';
@@ -5497,6 +5497,180 @@ class AppLocalizationsHi extends AppLocalizations {
       locale: localeName,
       other: 'यहां अपना PGN टेक्स्ट डाले,$count खेल तक',
       one: 'यहां अपना PGN टेक्स्ट डाले,$count खेल तक',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get timeagoJustNow => 'अभी';
+
+  @override
+  String get timeagoRightNow => 'अभी';
+
+  @override
+  String get timeagoCompleted => 'पूर्ण';
+
+  @override
+  String timeagoInNbSeconds(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count सेकंड में',
+      one: '$count सेकेंड में',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbMinutes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count मिनट में',
+      one: '$count मिनट में',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbHours(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count घंटों में',
+      one: '$count घंटों में',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count दिनो में',
+      one: '$count दिन में',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbWeeks(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count हफ़्तों में',
+      one: '$count हफ़्ते में',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbMonths(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count महीनो में',
+      one: '$count महीने बाद​',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbYears(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count सालों में',
+      one: '$count साल में',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbMinutesAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count मिनटों पहले',
+      one: '$count मिनट पहले',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbHoursAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count घंटे पहले',
+      one: '$count घंटे पहले',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbDaysAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count दिनों पहले',
+      one: '$count दिन पहले',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbWeeksAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count सप्ताह पहले',
+      one: '$count सप्ताह पहले',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbMonthsAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count महीने पहले',
+      one: '$count महीने पहले',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbYearsAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count वर्षों पहले',
+      one: '$count वर्ष पहले',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbMinutesRemaining(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count मिनट बचे हैं',
+      one: '$count मिनट बचा है',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbHoursRemaining(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count घंटे बचे हैं',
+      one: '$count घंटा बचा है',
     );
     return '$_temp0';
   }

@@ -1,5 +1,5 @@
+// ignore: unused_import
 import 'package:intl/intl.dart' as intl;
-
 import 'l10n.dart';
 
 // ignore_for_file: type=lint
@@ -13,9 +13,6 @@ class AppLocalizationsEu extends AppLocalizations {
 
   @override
   String get mobileAreYouSure => 'Ziur zaude?';
-
-  @override
-  String get mobileBlindfoldMode => 'Itsuka';
 
   @override
   String get mobileCancelTakebackOffer => 'Bertan behera utzi atzera-egite eskaera';
@@ -133,7 +130,7 @@ class AppLocalizationsEu extends AppLocalizations {
   String get mobileSystemColors => 'Sistemaren koloreak';
 
   @override
-  String get mobileTheme => 'Theme';
+  String get mobileTheme => 'Itxura';
 
   @override
   String get mobileToolsTab => 'Tresnak';
@@ -496,110 +493,107 @@ class AppLocalizationsEu extends AppLocalizations {
   String get broadcastRecentTournaments => 'Azken txapelketak';
 
   @override
-  String get broadcastOpenLichess => 'Open in Lichess';
+  String get broadcastOpenLichess => 'Ireki Lichessen';
 
   @override
-  String get broadcastTeams => 'Teams';
+  String get broadcastTeams => 'Taldeak';
 
   @override
-  String get broadcastBoards => 'Boards';
+  String get broadcastBoards => 'Taulak';
 
   @override
-  String get broadcastOverview => 'Overview';
+  String get broadcastOverview => 'Laburpena';
 
   @override
-  String get broadcastSubscribeTitle => 'Subscribe to be notified when each round starts. You can toggle bell or push notifications for broadcasts in your account preferences.';
+  String get broadcastSubscribeTitle => 'Harpidetu txanda bakoitza hastean jakinarazpena jasotzeko. Kanpaia edo push erako notifikazioak zure kontuaren hobespenetan aktibatu ditzakezu.';
 
   @override
-  String get broadcastUploadImage => 'Upload tournament image';
+  String get broadcastUploadImage => 'Kargatu txapelketaren irudia';
 
   @override
-  String get broadcastNoBoardsYet => 'No boards yet. These will appear once games are uploaded.';
+  String get broadcastNoBoardsYet => 'Taularik ez oraindik. Partidak igotzean agertuko dira.';
 
   @override
   String broadcastBoardsCanBeLoaded(String param) {
-    return 'Boards can be loaded with a source or via the $param';
+    return 'Taulak iturburu batekin edo ${param}ren bidez kargatu daitezke';
   }
 
   @override
   String broadcastStartsAfter(String param) {
-    return 'Starts after $param';
+    return '${param}ren ondoren hasiko da';
   }
 
   @override
-  String get broadcastStartVerySoon => 'The broadcast will start very soon.';
+  String get broadcastStartVerySoon => 'Zuzenekoa berehala hasiko da.';
 
   @override
-  String get broadcastNotYetStarted => 'The broadcast has not yet started.';
+  String get broadcastNotYetStarted => 'Zuzenekoa ez da oraindik hasi.';
 
   @override
-  String get broadcastOfficialWebsite => 'Official website';
+  String get broadcastOfficialWebsite => 'Webgune ofiziala';
 
   @override
-  String get broadcastStandings => 'Standings';
+  String get broadcastStandings => 'Sailkapena';
 
   @override
-  String get broadcastOfficialStandings => 'Official Standings';
+  String get broadcastOfficialStandings => 'Sailkapen ofiziala';
 
   @override
   String broadcastIframeHelp(String param) {
-    return 'More options on the $param';
+    return 'Aukera gehiago ${param}ean';
   }
 
   @override
-  String get broadcastWebmastersPage => 'webmasters page';
+  String get broadcastWebmastersPage => 'webmasterraren webgune';
 
   @override
   String broadcastPgnSourceHelp(String param) {
-    return 'A public, real-time PGN source for this round. We also offer a $param for faster and more efficient synchronisation.';
+    return 'Txanda honen zuzeneko PGN iturburua. $param ere eskaintzen dugu sinkronizazio zehatzagoa nahi baduzu.';
   }
 
   @override
-  String get broadcastEmbedThisBroadcast => 'Embed this broadcast in your website';
+  String get broadcastEmbedThisBroadcast => 'Txertatu zuzeneko hau zure webgunean';
 
   @override
   String broadcastEmbedThisRound(String param) {
-    return 'Embed $param in your website';
+    return 'Txertatu $param zure webgunean';
   }
 
   @override
-  String get broadcastRatingDiff => 'Rating diff';
+  String get broadcastRatingDiff => 'Elo diferentzia';
 
   @override
-  String get broadcastGamesThisTournament => 'Games in this tournament';
+  String get broadcastGamesThisTournament => 'Txapelketa honetako partidak';
 
   @override
-  String get broadcastScore => 'Score';
+  String get broadcastScore => 'Emaitza';
 
   @override
-  String get broadcastAllTeams => 'All teams';
+  String get broadcastAllTeams => 'Talde guztiak';
 
   @override
-  String get broadcastTournamentFormat => 'Tournament format';
+  String get broadcastTournamentFormat => 'Txapelketaren formatua';
 
   @override
-  String get broadcastTournamentLocation => 'Tournament Location';
+  String get broadcastTournamentLocation => 'Txapelketaren kokalekua';
 
   @override
-  String get broadcastTopPlayers => 'Top players';
+  String get broadcastTopPlayers => 'Jokalari onenak';
 
   @override
-  String get broadcastTimezone => 'Time zone';
+  String get broadcastTimezone => 'Ordu-zona';
 
   @override
-  String get broadcastFideRatingCategory => 'FIDE rating category';
+  String get broadcastFideRatingCategory => 'FIDE rating kategoria';
 
   @override
-  String get broadcastOptionalDetails => 'Optional details';
+  String get broadcastOptionalDetails => 'Hautazko xehetasunak';
 
   @override
-  String get broadcastUpcomingBroadcasts => 'Upcoming broadcasts';
+  String get broadcastPastBroadcasts => 'Pasatutako zuzenekoak';
 
   @override
-  String get broadcastPastBroadcasts => 'Past broadcasts';
-
-  @override
-  String get broadcastAllBroadcastsByMonth => 'View all broadcasts by month';
+  String get broadcastAllBroadcastsByMonth => 'Ikusi zuzeneko guztiak hilabeteka';
 
   @override
   String broadcastNbBroadcasts(int count) {
@@ -871,6 +865,9 @@ class AppLocalizationsEu extends AppLocalizations {
   String get preferencesInGameOnly => 'Partidan zehar bakarrik';
 
   @override
+  String get preferencesExceptInGame => 'Except in-game';
+
+  @override
   String get preferencesChessClock => 'Xake-erlojua';
 
   @override
@@ -1010,6 +1007,9 @@ class AppLocalizationsEu extends AppLocalizations {
 
   @override
   String get preferencesBellNotificationSound => 'Kanpaiaren jakinarazpen soinua';
+
+  @override
+  String get preferencesBlindfold => 'Itsuka';
 
   @override
   String get puzzlePuzzles => 'Ariketak';
@@ -4339,7 +4339,7 @@ class AppLocalizationsEu extends AppLocalizations {
   String get nothingToSeeHere => 'Hemen ez dago ezer zuretzat.';
 
   @override
-  String get stats => 'Stats';
+  String get stats => 'Estatistikak';
 
   @override
   String opponentLeftCounter(int count) {
@@ -5456,7 +5456,7 @@ class AppLocalizationsEu extends AppLocalizations {
 
   @override
   String studyPerPage(String param) {
-    return '$param per page';
+    return '$param orrialde bakoitzean';
   }
 
   @override
@@ -5499,6 +5499,180 @@ class AppLocalizationsEu extends AppLocalizations {
       locale: localeName,
       other: 'Itsatsi hemen zure PGNa, gehienez $count partida',
       one: 'Itsatsi hemen zure PGNa, gehienez partida $count',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get timeagoJustNow => 'orain';
+
+  @override
+  String get timeagoRightNow => 'orain';
+
+  @override
+  String get timeagoCompleted => 'amaituta';
+
+  @override
+  String timeagoInNbSeconds(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count segundotan',
+      one: 'segundo ${count}en',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbMinutes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count minututan',
+      one: 'minutu ${count}en',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbHours(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count ordutan',
+      one: 'ordu ${count}en',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count egunetan',
+      one: 'egun ${count}en',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbWeeks(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count egunetan',
+      one: 'aste ${count}en',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbMonths(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count hilabetetan',
+      one: 'hilabete ${count}en',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbYears(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count urtetan',
+      one: 'urte ${count}en',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbMinutesAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'orain dela $count minutu',
+      one: 'orain dela minutu $count',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbHoursAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'orain dela $count ordu',
+      one: 'orain dela ordu $count',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbDaysAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'orain dela $count egun',
+      one: 'orain dela egun $count',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbWeeksAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'orain dela $count aste',
+      one: 'orain dela aste $count',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbMonthsAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'orain dela $count hilabete',
+      one: 'orain dela hilabete $count',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbYearsAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'orain dela $count urte',
+      one: 'orain dela urte $count',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbMinutesRemaining(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count minutu falta dira',
+      one: 'Minutu $count falta da',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbHoursRemaining(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count ordu falta dira',
+      one: 'Ordu $count falta da',
     );
     return '$_temp0';
   }

@@ -1,5 +1,5 @@
+// ignore: unused_import
 import 'package:intl/intl.dart' as intl;
-
 import 'l10n.dart';
 
 // ignore_for_file: type=lint
@@ -13,9 +13,6 @@ class AppLocalizationsBg extends AppLocalizations {
 
   @override
   String get mobileAreYouSure => 'Сигурни ли сте?';
-
-  @override
-  String get mobileBlindfoldMode => 'Blindfold';
 
   @override
   String get mobileCancelTakebackOffer => 'Cancel takeback offer';
@@ -496,16 +493,16 @@ class AppLocalizationsBg extends AppLocalizations {
   String get broadcastRecentTournaments => 'Recent tournaments';
 
   @override
-  String get broadcastOpenLichess => 'Open in Lichess';
+  String get broadcastOpenLichess => 'Отвори в Lichess';
 
   @override
-  String get broadcastTeams => 'Teams';
+  String get broadcastTeams => 'Отбори';
 
   @override
-  String get broadcastBoards => 'Boards';
+  String get broadcastBoards => 'Дъски';
 
   @override
-  String get broadcastOverview => 'Overview';
+  String get broadcastOverview => 'Общ преглед';
 
   @override
   String get broadcastSubscribeTitle => 'Subscribe to be notified when each round starts. You can toggle bell or push notifications for broadcasts in your account preferences.';
@@ -533,10 +530,10 @@ class AppLocalizationsBg extends AppLocalizations {
   String get broadcastNotYetStarted => 'The broadcast has not yet started.';
 
   @override
-  String get broadcastOfficialWebsite => 'Official website';
+  String get broadcastOfficialWebsite => 'Официален уебсайт';
 
   @override
-  String get broadcastStandings => 'Standings';
+  String get broadcastStandings => 'Класиране';
 
   @override
   String get broadcastOfficialStandings => 'Official Standings';
@@ -566,10 +563,10 @@ class AppLocalizationsBg extends AppLocalizations {
   String get broadcastRatingDiff => 'Rating diff';
 
   @override
-  String get broadcastGamesThisTournament => 'Games in this tournament';
+  String get broadcastGamesThisTournament => 'Игри в този турнир';
 
   @override
-  String get broadcastScore => 'Score';
+  String get broadcastScore => 'Резултат';
 
   @override
   String get broadcastAllTeams => 'All teams';
@@ -591,9 +588,6 @@ class AppLocalizationsBg extends AppLocalizations {
 
   @override
   String get broadcastOptionalDetails => 'Optional details';
-
-  @override
-  String get broadcastUpcomingBroadcasts => 'Upcoming broadcasts';
 
   @override
   String get broadcastPastBroadcasts => 'Past broadcasts';
@@ -871,6 +865,9 @@ class AppLocalizationsBg extends AppLocalizations {
   String get preferencesInGameOnly => 'Само по време на игра';
 
   @override
+  String get preferencesExceptInGame => 'Except in-game';
+
+  @override
   String get preferencesChessClock => 'Шахматен часовник';
 
   @override
@@ -1010,6 +1007,9 @@ class AppLocalizationsBg extends AppLocalizations {
 
   @override
   String get preferencesBellNotificationSound => 'Мелодия за известия';
+
+  @override
+  String get preferencesBlindfold => 'Blindfold';
 
   @override
   String get puzzlePuzzles => 'Задачи';
@@ -4339,7 +4339,7 @@ class AppLocalizationsBg extends AppLocalizations {
   String get nothingToSeeHere => 'Nothing to see here at the moment.';
 
   @override
-  String get stats => 'Stats';
+  String get stats => 'Статистика';
 
   @override
   String opponentLeftCounter(int count) {
@@ -5456,7 +5456,7 @@ class AppLocalizationsBg extends AppLocalizations {
 
   @override
   String studyPerPage(String param) {
-    return '$param per page';
+    return '$param на страница';
   }
 
   @override
@@ -5499,6 +5499,180 @@ class AppLocalizationsBg extends AppLocalizations {
       locale: localeName,
       other: 'Постави твоя PGN текст тук, до $count партии',
       one: 'Постави твоя PGN текст тук, до $count партия',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get timeagoJustNow => 'току що';
+
+  @override
+  String get timeagoRightNow => 'точно сега';
+
+  @override
+  String get timeagoCompleted => 'завършено';
+
+  @override
+  String timeagoInNbSeconds(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'след $count секунди',
+      one: 'след $count секунда',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbMinutes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'след $count минути',
+      one: 'след $count минута',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbHours(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'след $count часа',
+      one: 'след $count час',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'след $count дни',
+      one: 'след $count ден',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbWeeks(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'след $count седмици',
+      one: 'след $count седмица',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbMonths(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'след $count месеца',
+      one: 'след $count месец',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbYears(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'след $count години',
+      one: 'след $count година',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbMinutesAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'преди $count минути',
+      one: 'преди $count минута',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbHoursAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Преди $count часа',
+      one: 'преди $count час',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbDaysAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Преди $count дни',
+      one: 'преди $count ден',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbWeeksAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'преди $count седмици',
+      one: 'преди $count седмица',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbMonthsAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'преди $count месеца',
+      one: 'преди $count месец',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbYearsAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'преди $count години',
+      one: 'преди $count година',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbMinutesRemaining(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'остават $count минути',
+      one: 'остава $count минутa',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbHoursRemaining(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'остават $count часа',
+      one: 'остава $count час',
     );
     return '$_temp0';
   }

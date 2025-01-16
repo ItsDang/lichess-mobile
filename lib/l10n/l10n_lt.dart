@@ -1,5 +1,5 @@
+// ignore: unused_import
 import 'package:intl/intl.dart' as intl;
-
 import 'l10n.dart';
 
 // ignore_for_file: type=lint
@@ -13,9 +13,6 @@ class AppLocalizationsLt extends AppLocalizations {
 
   @override
   String get mobileAreYouSure => 'Are you sure?';
-
-  @override
-  String get mobileBlindfoldMode => 'Blindfold';
 
   @override
   String get mobileCancelTakebackOffer => 'Cancel takeback offer';
@@ -400,7 +397,7 @@ class AppLocalizationsLt extends AppLocalizations {
   String get broadcastLiveBroadcasts => 'Vykstančios turnyrų transliacijos';
 
   @override
-  String get broadcastBroadcastCalendar => 'Broadcast calendar';
+  String get broadcastBroadcastCalendar => 'Transliavimo kalendorius';
 
   @override
   String get broadcastNewBroadcast => 'Nauja transliacija';
@@ -463,7 +460,7 @@ class AppLocalizationsLt extends AppLocalizations {
 
   @override
   String broadcastStartDateTimeZone(String param) {
-    return 'Start date in the tournament local timezone: $param';
+    return 'Turnyro pradžia vietos laiku: $param';
   }
 
   @override
@@ -530,110 +527,107 @@ class AppLocalizationsLt extends AppLocalizations {
   String get broadcastRecentTournaments => 'Neseniai sukurti turnyrai';
 
   @override
-  String get broadcastOpenLichess => 'Open in Lichess';
+  String get broadcastOpenLichess => 'Atverti Lichess-e';
 
   @override
-  String get broadcastTeams => 'Teams';
+  String get broadcastTeams => 'Komandos';
 
   @override
-  String get broadcastBoards => 'Boards';
+  String get broadcastBoards => 'Lentos';
 
   @override
-  String get broadcastOverview => 'Overview';
+  String get broadcastOverview => 'Apžvalga';
 
   @override
-  String get broadcastSubscribeTitle => 'Subscribe to be notified when each round starts. You can toggle bell or push notifications for broadcasts in your account preferences.';
+  String get broadcastSubscribeTitle => 'Užsakykite pranešimą apie kiekvieno turo pradžią. Paskyros nustatymuose galite perjungti transliacijų skambėjimo signalą arba tiesioginius pranešimus.';
 
   @override
-  String get broadcastUploadImage => 'Upload tournament image';
+  String get broadcastUploadImage => 'Įkelkite turnyro paveikslėlį';
 
   @override
-  String get broadcastNoBoardsYet => 'No boards yet. These will appear once games are uploaded.';
+  String get broadcastNoBoardsYet => 'Dar nėra lentų. Jos bus rodomos, kai bus įkeltos partijos.';
 
   @override
   String broadcastBoardsCanBeLoaded(String param) {
-    return 'Boards can be loaded with a source or via the $param';
+    return 'Lentas galima įkelti iš šaltinio arba per $param';
   }
 
   @override
   String broadcastStartsAfter(String param) {
-    return 'Starts after $param';
+    return 'Pradedama po $param';
   }
 
   @override
-  String get broadcastStartVerySoon => 'The broadcast will start very soon.';
+  String get broadcastStartVerySoon => 'Transliacija prasidės visai netrukus.';
 
   @override
-  String get broadcastNotYetStarted => 'The broadcast has not yet started.';
+  String get broadcastNotYetStarted => 'Transliacija dar neprasidėjo.';
 
   @override
-  String get broadcastOfficialWebsite => 'Official website';
+  String get broadcastOfficialWebsite => 'Oficialus tinklapis';
 
   @override
-  String get broadcastStandings => 'Standings';
+  String get broadcastStandings => 'Rezultatai';
 
   @override
-  String get broadcastOfficialStandings => 'Official Standings';
+  String get broadcastOfficialStandings => 'Oficialūs rezultatai';
 
   @override
   String broadcastIframeHelp(String param) {
-    return 'More options on the $param';
+    return 'Daugiau parinkčių $param';
   }
 
   @override
-  String get broadcastWebmastersPage => 'webmasters page';
+  String get broadcastWebmastersPage => 'žiniatinklio valdytojų puslapis';
 
   @override
   String broadcastPgnSourceHelp(String param) {
-    return 'A public, real-time PGN source for this round. We also offer a $param for faster and more efficient synchronisation.';
+    return 'Viešas realaus laiko PGN šaltinis šiam turui. Taip pat siūlome $param greitesniam ir efektyvesniam sinchronizavimui.';
   }
 
   @override
-  String get broadcastEmbedThisBroadcast => 'Embed this broadcast in your website';
+  String get broadcastEmbedThisBroadcast => 'Įterpkite šią transliaciją į savo svetainę';
 
   @override
   String broadcastEmbedThisRound(String param) {
-    return 'Embed $param in your website';
+    return 'Įterpkite $param į savo svetainę';
   }
 
   @override
-  String get broadcastRatingDiff => 'Rating diff';
+  String get broadcastRatingDiff => 'Reitingo skirtumas';
 
   @override
-  String get broadcastGamesThisTournament => 'Games in this tournament';
+  String get broadcastGamesThisTournament => 'Partijos šiame turnyre';
 
   @override
-  String get broadcastScore => 'Score';
+  String get broadcastScore => 'Taškų skaičius';
 
   @override
-  String get broadcastAllTeams => 'All teams';
+  String get broadcastAllTeams => 'Visos komandos';
 
   @override
-  String get broadcastTournamentFormat => 'Tournament format';
+  String get broadcastTournamentFormat => 'Turnyro formatas';
 
   @override
-  String get broadcastTournamentLocation => 'Tournament Location';
+  String get broadcastTournamentLocation => 'Turnyro vieta';
 
   @override
-  String get broadcastTopPlayers => 'Top players';
+  String get broadcastTopPlayers => 'Geriausi žaidėjai';
 
   @override
-  String get broadcastTimezone => 'Time zone';
+  String get broadcastTimezone => 'Laiko juosta';
 
   @override
-  String get broadcastFideRatingCategory => 'FIDE rating category';
+  String get broadcastFideRatingCategory => 'FIDE reitingo kategorija';
 
   @override
-  String get broadcastOptionalDetails => 'Optional details';
+  String get broadcastOptionalDetails => 'Papildoma informacija';
 
   @override
-  String get broadcastUpcomingBroadcasts => 'Upcoming broadcasts';
+  String get broadcastPastBroadcasts => 'Ankstesnės transliacijos';
 
   @override
-  String get broadcastPastBroadcasts => 'Past broadcasts';
-
-  @override
-  String get broadcastAllBroadcastsByMonth => 'View all broadcasts by month';
+  String get broadcastAllBroadcastsByMonth => 'Rodyti visas transliacijas pagal mėnesį';
 
   @override
   String broadcastNbBroadcasts(int count) {
@@ -907,6 +901,9 @@ class AppLocalizationsLt extends AppLocalizations {
   String get preferencesInGameOnly => 'Tik žaidimo metu';
 
   @override
+  String get preferencesExceptInGame => 'Except in-game';
+
+  @override
   String get preferencesChessClock => 'Žaidimo laikrodis';
 
   @override
@@ -1046,6 +1043,9 @@ class AppLocalizationsLt extends AppLocalizations {
 
   @override
   String get preferencesBellNotificationSound => 'Pranešimų varpelio garsas';
+
+  @override
+  String get preferencesBlindfold => 'Blindfold';
 
   @override
   String get puzzlePuzzles => 'Užduotys';
@@ -4385,7 +4385,7 @@ class AppLocalizationsLt extends AppLocalizations {
   String get nothingToSeeHere => 'Nieko naujo.';
 
   @override
-  String get stats => 'Stats';
+  String get stats => 'Statistika';
 
   @override
   String opponentLeftCounter(int count) {
@@ -5590,7 +5590,7 @@ class AppLocalizationsLt extends AppLocalizations {
 
   @override
   String studyPerPage(String param) {
-    return '$param per page';
+    return '$param puslapyje';
   }
 
   @override
@@ -5641,6 +5641,210 @@ class AppLocalizationsLt extends AppLocalizations {
       many: 'Įklijuokite savo PGN tekstą čia, iki $count žaidimo',
       few: 'Įklijuokite savo PGN tekstą čia, iki $count žaidimų',
       one: 'Įklijuokite savo PGN tekstą čia, iki $count žaidimo',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get timeagoJustNow => 'ką tik';
+
+  @override
+  String get timeagoRightNow => 'dabar';
+
+  @override
+  String get timeagoCompleted => 'užbaigta';
+
+  @override
+  String timeagoInNbSeconds(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'po $count sekundžių',
+      many: 'po $count sekundės',
+      few: 'po $count sekundžių',
+      one: 'po $count sekundės',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbMinutes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'po $count minučių',
+      many: 'po $count minutės',
+      few: 'po $count minučių',
+      one: 'po $count minutės',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbHours(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'po $count valandų',
+      many: 'po $count valandos',
+      few: 'po $count valandų',
+      one: 'po $count valandos',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'po $count dienų',
+      many: 'po $count dienos',
+      few: 'po $count dienų',
+      one: 'po $count dienos',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbWeeks(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'po $count savaičių',
+      many: 'po $count savaitės',
+      few: 'po $count savaičių',
+      one: 'po $count savaitės',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbMonths(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'po $count mėnesių',
+      many: 'po $count mėnesio',
+      few: 'po $count mėnesių',
+      one: 'po $count mėnesio',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoInNbYears(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'po $count metų',
+      many: 'po $count metų',
+      few: 'po $count metų',
+      one: 'po $count metų',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbMinutesAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Prieš $count minučių',
+      many: 'Prieš $count minutės',
+      few: 'Prieš $count minutes',
+      one: 'Prieš $count minutę',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbHoursAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Prieš $count valandų',
+      many: 'Prieš $count valandos',
+      few: 'Prieš $count valandas',
+      one: 'Prieš $count valandą',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbDaysAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Prieš $count dienų',
+      many: 'Prieš $count dienos',
+      few: 'Prieš $count dienas',
+      one: 'Prieš $count dieną',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbWeeksAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Prieš $count savaičių',
+      many: 'Prieš $count savaitės',
+      few: 'Prieš $count savaites',
+      one: 'Prieš $count savaitę',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbMonthsAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Prieš $count mėnesių',
+      many: 'Prieš $count mėnesio',
+      few: 'Prieš $count mėnesius',
+      one: 'Prieš $count mėnesį',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbYearsAgo(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Prieš $count metų',
+      many: 'Prieš $count metų',
+      few: 'Prieš $count metus',
+      one: 'Prieš $count metus',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbMinutesRemaining(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Liko $count minučių',
+      many: 'Liko $count minučių',
+      few: 'Liko $count minutės',
+      one: 'Liko $count minutė',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeagoNbHoursRemaining(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Liko $count valandų',
+      many: 'Liko $count valandų',
+      few: 'Liko $count valandos',
+      one: 'Liko $count valanda',
     );
     return '$_temp0';
   }
