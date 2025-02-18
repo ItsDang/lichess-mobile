@@ -390,12 +390,6 @@ class AppLocalizationsEl extends AppLocalizations {
   String get broadcastUpcoming => 'Προσεχή';
 
   @override
-  String get broadcastCompleted => 'Ολοκληρώθηκε';
-
-  @override
-  String get broadcastCompletedHelp => 'Το Lichess ανιχνεύει ολοκλήρωση γύρων, αλλά μπορεί να κάνει λάθος. Χρησιμοποιήστε αυτό για να το ρυθμίσετε χειροκίνητα.';
-
-  @override
   String get broadcastRoundName => 'Όνομα γύρου';
 
   @override
@@ -594,6 +588,12 @@ class AppLocalizationsEl extends AppLocalizations {
 
   @override
   String get broadcastAllBroadcastsByMonth => 'Προβολή όλων των αναμεταδόσεων ανά μήνα';
+
+  @override
+  String get broadcastBackToLiveMove => 'Back to live move';
+
+  @override
+  String get broadcastSinceHideResults => 'Εφόσον επιλέξατε να κρύψετε τα αποτελέσματα, όλες οι σκακιέρες προεπισκόπησης είναι κενές ώστε να αποφευχθούν σπόιλερς.';
 
   @override
   String broadcastNbBroadcasts(int count) {
@@ -1465,6 +1465,18 @@ class AppLocalizationsEl extends AppLocalizations {
   String get puzzleThemeIntermezzoDescription => 'Αντί για την αναμενόμενη κίνηση παίζουμε πρώτα μια άλλη κίνηση η οποία δημιουργεί μια άμεση απειλή και που ο αντίπαλος πρέπει να απαντήσει. Επίσης γνωστό ως \"Zwischenzug\" ή \"Intermezzo\".';
 
   @override
+  String get puzzleThemeKillBoxMate => 'Kill box mate';
+
+  @override
+  String get puzzleThemeKillBoxMateDescription => 'A rook is next to the enemy king and supported by a queen that also blocks the king\'s escape squares. The rook and the queen catch the enemy king in a 3 by 3 \"kill box\".';
+
+  @override
+  String get puzzleThemeVukovicMate => 'Ματ του Vukovic';
+
+  @override
+  String get puzzleThemeVukovicMateDescription => 'Ένας πύργος και ένας ίππος συνδυάζονται για ματ στην άκρη της σκακιέρας. Ο πύργος κάνει ματ υποστηριζόμενος από κάποιο άλλο κομμάτι, ενώ ο ίππος ελέγχει τα υπόλοιπα διαθέσιμα τετράγωνα γύρω από τον βασιλιά.';
+
+  @override
   String get puzzleThemeKnightEndgame => 'Φινάλε Ίππων';
 
   @override
@@ -1680,16 +1692,13 @@ class AppLocalizationsEl extends AppLocalizations {
   String get settingsManagedAccountCannotBeClosed => 'Ο λογαριασμός σας βρίσκεται υπό διαχείριση και δεν μπορεί να κλείσει.';
 
   @override
-  String get settingsClosingIsDefinitive => 'Η απενεργοποίηση είναι οριστική. Δεν υπάρχει τρόπος ανάκλησης. Είστε σίγουρος;';
-
-  @override
   String get settingsCantOpenSimilarAccount => 'Δεν θα σας επιτραπεί η δημιουργία νέου λογαριασμού με το ίδιο όνομα, ακόμα κι αν μετατρέψετε έναν μικρό σε έναν κεφαλαίο ή το αντίστροφο.';
 
   @override
-  String get settingsChangedMindDoNotCloseAccount => 'Άλλαξα γνώμη, μην κλείσετε τον λογαριασμό μου';
+  String get settingsCancelKeepAccount => 'Ακύρωσε και διατήρησε τον λογαριασμό μου';
 
   @override
-  String get settingsCloseAccountExplanation => 'Είστε σίγουροι πως θέλετε να απενεργοποιήσετε τον λογαριασμό σας; Η απενεργοποίηση είναι μια μόνιμη απόφαση. ΠΟΤΕ ΞΑΝΑ δεν θα μπορέσετε να συνδεθείτε.';
+  String get settingsCloseAccountAreYouSure => 'Είσαστε σίγουροι ότι θέλετε να κλείσετε τον λογαριασμό σας;';
 
   @override
   String get settingsThisAccountIsClosed => 'Αυτός ο λογαριασμός έχει κλείσει.';
@@ -3679,6 +3688,9 @@ class AppLocalizationsEl extends AppLocalizations {
   String get followAndChallengeFriends => 'Ακολουθήστε και προκαλέστε φίλους';
 
   @override
+  String get noChallenges => 'Δεν έχετε προκλήσεις.';
+
+  @override
   String get gameAnalysis => 'Ανάλυση παιχνιδιού';
 
   @override
@@ -4274,13 +4286,7 @@ class AppLocalizationsEl extends AppLocalizations {
   String get reopenYourAccount => 'Ξανανοίξτε τον λογαριασμό σας';
 
   @override
-  String get closedAccountChangedMind => 'Αν κλείσατε το λογαριασμό σας, αλλά έχετε αλλάξει γνώμη, μπορείτε να τον ξανανοίξετε.';
-
-  @override
-  String get onlyWorksOnce => 'Αυτό θα λειτουργήσει μόνο μία φορά.';
-
-  @override
-  String get cantDoThisTwice => 'Αν κλείσετε το λογαριασμό σας για δεύτερη φορά, δε θα υπάρχει τρόπος να τον ανοίξετε ξανά.';
+  String get reopenYourAccountDescription => 'Αν κλείσατε τον λογαριασμό σας, αλλά έκτοτε έχετε αλλάξει γνώμη, έχετε την δυνατότητα να ανακτήσετε τον λογαριασμό σας.';
 
   @override
   String get emailAssociatedToaccount => 'Διεύθυνση ηλεκτρονικού ταχυδρομείου αυτού του λογαριασμού';
@@ -4375,6 +4381,17 @@ class AppLocalizationsEl extends AppLocalizations {
   }
 
   @override
+  String numberBlunders(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count Σοβαρά σφάλματα',
+      one: '$count Σοβαρό σφάλμα',
+    );
+    return '$_temp0';
+  }
+
+  @override
   String nbMistakes(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -4386,12 +4403,34 @@ class AppLocalizationsEl extends AppLocalizations {
   }
 
   @override
+  String numberMistakes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count Λάθη',
+      one: '$count Λάθος',
+    );
+    return '$_temp0';
+  }
+
+  @override
   String nbInaccuracies(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
       other: '$count ανακρίβειες',
       one: '$count ανακρίβεια',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String numberInaccuracies(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count Ανακρίβειες',
+      one: '$count Ανακρίβεια',
     );
     return '$_temp0';
   }
@@ -5113,6 +5152,9 @@ class AppLocalizationsEl extends AppLocalizations {
   String get studyPlaying => 'Παίζονται';
 
   @override
+  String get studyShowResults => 'Αποτελέσματα';
+
+  @override
   String get studyShowEvalBar => 'Μπάρες αξιολόγησης';
 
   @override
@@ -5497,7 +5539,7 @@ class AppLocalizationsEl extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'Επικολλήστε το PGN εδώ, μέχρι $count παρτίδες',
+      other: 'Επικολλήστε παιχνίδια ως PGN εδώ. Θα δημιουργηθεί κεφάλαιο για κάθε παιχνίδι. Η μελέτη μπορεί να έχει μέχρι $count κεφάλαια.',
       one: 'Επικολλήστε το PGN εδώ, μέχρι $count παρτίδα',
     );
     return '$_temp0';

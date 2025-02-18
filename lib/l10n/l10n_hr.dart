@@ -21,7 +21,7 @@ class AppLocalizationsHr extends AppLocalizations {
   String get mobileClearButton => 'Očisti';
 
   @override
-  String get mobileCorrespondenceClearSavedMove => 'Clear saved move';
+  String get mobileCorrespondenceClearSavedMove => 'Izbriši spremljeni potez';
 
   @override
   String get mobileCustomGameJoinAGame => 'Pridružite se partiji';
@@ -50,7 +50,7 @@ class AppLocalizationsHr extends AppLocalizations {
   String get mobileMustBeLoggedIn => 'Morate biti prijavljeni kako bi vidjeli ovu stranicu.';
 
   @override
-  String get mobileNoSearchResults => 'Bez rezultata';
+  String get mobileNoSearchResults => 'Nema rezultata';
 
   @override
   String get mobileNotFollowingAnyUser => 'Ne pratite nijednog korisnika.';
@@ -64,7 +64,7 @@ class AppLocalizationsHr extends AppLocalizations {
   }
 
   @override
-  String get mobilePrefMagnifyDraggedPiece => 'Povečaj figuru koja se vuče';
+  String get mobilePrefMagnifyDraggedPiece => 'Povećaj figuru koja se vuče';
 
   @override
   String get mobilePuzzleStormConfirmEndRun => 'Želite li završiti ovu rundu?';
@@ -73,7 +73,7 @@ class AppLocalizationsHr extends AppLocalizations {
   String get mobilePuzzleStormFilterNothingToShow => 'Bez rezultata, molimo Vas promijenite filtere';
 
   @override
-  String get mobilePuzzleStormNothingToShow => 'Bez rezultata. Odigrajte koju rundu Puzzle Storm-a.';
+  String get mobilePuzzleStormNothingToShow => 'Nema rezultata. Odigrajte koju rundu Puzzle Storm-a.';
 
   @override
   String get mobilePuzzleStormSubtitle => 'Riješite što više zadataka u 3 minute.';
@@ -85,7 +85,7 @@ class AppLocalizationsHr extends AppLocalizations {
   String get mobilePuzzleThemesSubtitle => 'Rješavajte zadatke iz Vaših najdražih otvaranja, ili izaberite temu.';
 
   @override
-  String get mobilePuzzlesTab => 'Puzzles';
+  String get mobilePuzzlesTab => 'Zagonetke';
 
   @override
   String get mobileRecentSearches => 'Nedavna pretraživanja';
@@ -408,12 +408,6 @@ class AppLocalizationsHr extends AppLocalizations {
   String get broadcastUpcoming => 'Nadolazi';
 
   @override
-  String get broadcastCompleted => 'Završeno';
-
-  @override
-  String get broadcastCompletedHelp => 'Lichess otkriva kraj runde, ali može pogriješiti. Koristite ovo kako bi postavili ručno.';
-
-  @override
   String get broadcastRoundName => 'Ime runde';
 
   @override
@@ -511,7 +505,7 @@ class AppLocalizationsHr extends AppLocalizations {
   String get broadcastRecentTournaments => 'Nedavni turniri';
 
   @override
-  String get broadcastOpenLichess => 'Open in Lichess';
+  String get broadcastOpenLichess => 'Otvori u Lichessu';
 
   @override
   String get broadcastTeams => 'Ekipe';
@@ -612,6 +606,12 @@ class AppLocalizationsHr extends AppLocalizations {
 
   @override
   String get broadcastAllBroadcastsByMonth => 'Pogledaj sve prijenose prema mjesecu';
+
+  @override
+  String get broadcastBackToLiveMove => 'Back to live move';
+
+  @override
+  String get broadcastSinceHideResults => 'Since you chose to hide the results, all the preview boards are empty to avoid spoilers.';
 
   @override
   String broadcastNbBroadcasts(int count) {
@@ -884,7 +884,7 @@ class AppLocalizationsHr extends AppLocalizations {
   String get preferencesInGameOnly => 'Samo unutar igre';
 
   @override
-  String get preferencesExceptInGame => 'Except in-game';
+  String get preferencesExceptInGame => 'Osim za vrijeme partije';
 
   @override
   String get preferencesChessClock => 'Sat';
@@ -947,7 +947,7 @@ class AppLocalizationsHr extends AppLocalizations {
   String get preferencesMoveConfirmation => 'Potvrda poteza';
 
   @override
-  String get preferencesExplainCanThenBeTemporarilyDisabled => 'Can be disabled during a game with the board menu';
+  String get preferencesExplainCanThenBeTemporarilyDisabled => 'Može biti isključeno tijekom partije u izborniku ploče';
 
   @override
   String get preferencesInCorrespondenceGames => 'U dopisnim partijama';
@@ -971,7 +971,7 @@ class AppLocalizationsHr extends AppLocalizations {
   String get preferencesInputMovesWithTheKeyboard => 'Omogući unošenje poteza tipkovnicom';
 
   @override
-  String get preferencesInputMovesWithVoice => 'Input moves with your voice';
+  String get preferencesInputMovesWithVoice => 'Igraj poteze pomoću svog glasa';
 
   @override
   String get preferencesSnapArrowsToValidMoves => 'Crtaj strelice za planiranje budućih poteza';
@@ -1028,7 +1028,7 @@ class AppLocalizationsHr extends AppLocalizations {
   String get preferencesBellNotificationSound => 'Obavijest kao zvuk';
 
   @override
-  String get preferencesBlindfold => 'Blindfold';
+  String get preferencesBlindfold => 'Slijepi';
 
   @override
   String get puzzlePuzzles => 'Zadaci';
@@ -1318,16 +1318,16 @@ class AppLocalizationsHr extends AppLocalizations {
   }
 
   @override
-  String get puzzleThemeAdvancedPawn => 'Pješak napreduje';
+  String get puzzleThemeAdvancedPawn => 'Napredan pješak';
 
   @override
-  String get puzzleThemeAdvancedPawnDescription => 'Pješak u postupku ili prijetnji promaknućem je ključan za taktiku.';
+  String get puzzleThemeAdvancedPawnDescription => 'Jedan od tvojih pješaka je duboko u protivničkoj poziciji, možda prijeti promocijom.';
 
   @override
   String get puzzleThemeAdvantage => 'Prednost';
 
   @override
-  String get puzzleThemeAdvantageDescription => 'Iskoristi priliku i pridobij odlučujuču prednost. (200cp ≤ eval ≤ 600cp)';
+  String get puzzleThemeAdvantageDescription => 'Iskoristi priliku i pridobij odlučujuću prednost. (200cp ≤ eval ≤ 600cp)';
 
   @override
   String get puzzleThemeAnastasiaMate => 'Anastazijin mat';
@@ -1339,10 +1339,10 @@ class AppLocalizationsHr extends AppLocalizations {
   String get puzzleThemeArabianMate => 'Arapski mat';
 
   @override
-  String get puzzleThemeArabianMateDescription => 'Skakač i top udružuju snage kako bi zarobili suparničkog kralja u uglu igraće ploče.';
+  String get puzzleThemeArabianMateDescription => 'Skakač i top udružuju snage kako bi zarobili protivničkog kralja u uglu igraće ploče.';
 
   @override
-  String get puzzleThemeAttackingF2F7 => 'Napad na f2 ili f7 polje';
+  String get puzzleThemeAttackingF2F7 => 'Napad na f2 ili f7';
 
   @override
   String get puzzleThemeAttackingF2F7Description => 'Napad na f2 ili f7 pješaka kao što je napad lovcem popularno nazvan \"fried liver opening\".';
@@ -1351,7 +1351,7 @@ class AppLocalizationsHr extends AppLocalizations {
   String get puzzleThemeAttraction => 'Privlačenje';
 
   @override
-  String get puzzleThemeAttractionDescription => 'Razmjena ili žrtva koja potiče ili forsira protivničke figure u poziciju koja omogućuje taktičke poteze koji donose prednost.';
+  String get puzzleThemeAttractionDescription => 'Razmjena ili žrtva koja potiče ili prisiljava protivničke figure u poziciju koja omogućuje taktičke poteze koji donose prednost.';
 
   @override
   String get puzzleThemeBackRankMate => 'Mat na zadnjem redu';
@@ -1453,7 +1453,7 @@ class AppLocalizationsHr extends AppLocalizations {
   String get puzzleThemeEnPassantDescription => 'Taktika koja uključuje pravilo \"en passant\" po kojem pješak uzima protivničkog pješaka koji ga preskače koristeći inicijalno otvaranje pješaka za dva polja.';
 
   @override
-  String get puzzleThemeExposedKing => 'Golišavi kralj';
+  String get puzzleThemeExposedKing => 'Izloženi kralj';
 
   @override
   String get puzzleThemeExposedKingDescription => 'Taktika koja uključuje kralja okruženim nekolicinom obrambenih figura što često rezultira matom.';
@@ -1487,6 +1487,18 @@ class AppLocalizationsHr extends AppLocalizations {
 
   @override
   String get puzzleThemeIntermezzoDescription => 'Potez koji se igra prije očekivanog poteza koji predstavlja direktnu prijetnju na koju protivnik mora odgovoriti.';
+
+  @override
+  String get puzzleThemeKillBoxMate => 'Mat u mreži';
+
+  @override
+  String get puzzleThemeKillBoxMateDescription => 'Top je pored protivničkog kralja i podržan je kraljicom koja također blokira kraljeva polja za bijeg. Top i kraljica zarobljavaju protivničkog kralja u 3 sa 3 matnoj mreži.';
+
+  @override
+  String get puzzleThemeVukovicMate => 'Vukovic mat';
+
+  @override
+  String get puzzleThemeVukovicMateDescription => 'Top i skakač se udruže da matiraju kralja. Top matira podržan trećom figurom, i skakač se koristi da blokira kraljeva polja za bijeg.';
 
   @override
   String get puzzleThemeKnightEndgame => 'Skakačeva završnica';
@@ -1704,16 +1716,13 @@ class AppLocalizationsHr extends AppLocalizations {
   String get settingsManagedAccountCannotBeClosed => 'Vašim računom se upravlja i ne može se zatvoriti.';
 
   @override
-  String get settingsClosingIsDefinitive => 'Zatvaranje je konačno. Nema povratka. Jesi li siguran?';
-
-  @override
   String get settingsCantOpenSimilarAccount => 'Neće ti biti dopušteno otvaranje novog računa s istim imenom, čak i ako kapitalizacija slova bude drugačija.';
 
   @override
-  String get settingsChangedMindDoNotCloseAccount => 'Predomislio/la sam se, ne zatvaraj moj račun';
+  String get settingsCancelKeepAccount => 'Cancel and keep my account';
 
   @override
-  String get settingsCloseAccountExplanation => 'Jeste li sigurni da želite zatvoriti račun? Zatvaranje računa je trajna odluka. Više se NIKADA nećete moći prijaviti.';
+  String get settingsCloseAccountAreYouSure => 'Are you sure you want to close your account?';
 
   @override
   String get settingsThisAccountIsClosed => 'Račun je zatvoren.';
@@ -2241,39 +2250,39 @@ class AppLocalizationsHr extends AppLocalizations {
   String get forgotPassword => 'Zaboravio/la si lozinku?';
 
   @override
-  String get error_weakPassword => 'Ova je lozinka iznimno česta i previše je lako pogoditi.';
+  String get error_weakPassword => 'Ova je lozinka iznimno česta i previše ju je lako pogoditi.';
 
   @override
-  String get error_namePassword => 'Molimo da ne koristiš svoje korisničko ime kao lozinku.';
+  String get error_namePassword => 'Molimo Vas da ne koristite svoje korisničko ime kao lozinku.';
 
   @override
-  String get blankedPassword => 'Koristio si istu lozinku na drugom mjestu, a to je mjesto ugroženo. Kako bismo osigurali sigurnost tvoga Lichess računa, potrebno je da postaviš novu lozinku. Hvala na razumijevanju.';
+  String get blankedPassword => 'Koristili ste istu lozinku na drugom mjestu, a to je mjesto ugroženo. Kako bismo osigurali sigurnost Vašeg Lichess računa, potrebno je da postavite novu lozinku. Hvala na razumijevanju.';
 
   @override
-  String get youAreLeavingLichess => 'Odlazite sa Lichess-a';
+  String get youAreLeavingLichess => 'Odlazite s Lichess-a';
 
   @override
   String get neverTypeYourPassword => 'Nikada nemojte upisivati svoju Lichess lozinku na drugom mjestu!';
 
   @override
   String proceedToX(String param) {
-    return 'Nastavi s $param';
+    return 'Nastavi do $param';
   }
 
   @override
-  String get passwordSuggestion => 'Ne postavljaj lozinku koju je predložio netko drugi. Iskoristit će je da ti ukradu račun.';
+  String get passwordSuggestion => 'Ne postavljajte lozinku koju je predložio netko drugi. Iskoristit će je da Vam ukradu račun.';
 
   @override
-  String get emailSuggestion => 'Ne postavljaj adresu e-pošte koju je predložio netko drugi. Iskoristit će je da ti ukradu račun.';
+  String get emailSuggestion => 'Ne postavljajte adresu e-pošte koju je predložio netko drugi. Iskoristit će je da Vam ukradu račun.';
 
   @override
   String get emailConfirmHelp => 'Pomoć oko potvrde e-pošte';
 
   @override
-  String get emailConfirmNotReceived => 'Nisi primo svoju potvrdnu e-poštu nakon prijave?';
+  String get emailConfirmNotReceived => 'Niste primili svoju potvrdnu e-poštu nakon prijave?';
 
   @override
-  String get whatSignupUsername => 'Koje si korisničko ime koristio za prijavu?';
+  String get whatSignupUsername => 'Koje ste korisničko ime koristili za prijavu?';
 
   @override
   String usernameNotFound(String param) {
@@ -2281,7 +2290,7 @@ class AppLocalizationsHr extends AppLocalizations {
   }
 
   @override
-  String get usernameCanBeUsedForNewAccount => 'Ovo korisničko ime možeš koristiti za stvaranje novog računa';
+  String get usernameCanBeUsedForNewAccount => 'Ovo korisničko ime možete koristiti za stvaranje novog računa';
 
   @override
   String emailSent(String param) {
@@ -2289,24 +2298,24 @@ class AppLocalizationsHr extends AppLocalizations {
   }
 
   @override
-  String get emailCanTakeSomeTime => 'Može potrajati neko vrijeme dok stigne.';
+  String get emailCanTakeSomeTime => 'Može potrajati neko vrijeme dok ne stigne.';
 
   @override
-  String get refreshInboxAfterFiveMinutes => 'Pričekaj 5 minuta i osvježi stranicu pristigle pošte.';
+  String get refreshInboxAfterFiveMinutes => 'Pričekajte 5 minuta i osvježite stranicu pristigle pošte.';
 
   @override
-  String get checkSpamFolder => 'Također provjeri svoju mapu neželjene pošte jer bi mogla i tamo završiti. Ako je tako, označi ju da nije spam.';
+  String get checkSpamFolder => 'Također provjerite svoju mapu neželjene pošte jer bi mogla i tamo završiti. Ako je tako, označite ju da nije neželjena.';
 
   @override
-  String get emailForSignupHelp => 'Ako ništa drugo ne uspije, pošalji nam ovu e-poruku:';
+  String get emailForSignupHelp => 'Ako ništa drugo ne uspije, pošaljite nam ovu e-poruku:';
 
   @override
   String copyTextToEmail(String param) {
-    return 'Kopiraj i zalijepi gornji tekst i pošalji ga $param';
+    return 'Kopirajte i zalijepite gornji tekst te ga pošaljite na $param';
   }
 
   @override
-  String get waitForSignupHelp => 'Javit ćemo ti se uskoro kako bismo ti pomogli dovršiti tvoju registraciju.';
+  String get waitForSignupHelp => 'Javit ćemo Vam se uskoro kako bismo Vam pomogli dovršiti Vašu registraciju.';
 
   @override
   String accountConfirmed(String param) {
@@ -2315,11 +2324,11 @@ class AppLocalizationsHr extends AppLocalizations {
 
   @override
   String accountCanLogin(String param) {
-    return 'Možeš se odmah prijaviti kao $param.';
+    return 'Možete se odmah prijaviti kao $param.';
   }
 
   @override
-  String get accountConfirmationEmailNotNeeded => 'Nije ti potrebna potvrdna e-pošta.';
+  String get accountConfirmationEmailNotNeeded => 'Nije Vam potrebna potvrdna e-pošta.';
 
   @override
   String accountClosed(String param) {
@@ -3261,7 +3270,7 @@ class AppLocalizationsHr extends AppLocalizations {
   String get error_email_unique => 'Email adresa je neispravna ili je već u upotrebi';
 
   @override
-  String get error_email_different => 'Već koristiš ovu e-mail adresu';
+  String get error_email_different => 'Već koristite ovu e-mail adresu';
 
   @override
   String error_minLength(String param) {
@@ -3701,6 +3710,9 @@ class AppLocalizationsHr extends AppLocalizations {
 
   @override
   String get followAndChallengeFriends => 'Prati i izazovi prijatelje';
+
+  @override
+  String get noChallenges => 'No challenges.';
 
   @override
   String get gameAnalysis => 'Analiza partije';
@@ -4155,7 +4167,7 @@ class AppLocalizationsHr extends AppLocalizations {
   String get someoneYouReportedWasBanned => 'Nekome koga si prijavio je zabranjen pristup';
 
   @override
-  String get congratsYouWon => 'Čestitamo na pobjedi!';
+  String get congratsYouWon => 'Čestitamo, pobijedili ste!';
 
   @override
   String gameVsX(String param1) {
@@ -4298,13 +4310,7 @@ class AppLocalizationsHr extends AppLocalizations {
   String get reopenYourAccount => 'Ponovno otvorite svoj račun';
 
   @override
-  String get closedAccountChangedMind => 'Ako ste zatvorili svoj račun, ali ste se predomislili, imate jednu priliku da vratite svoj račun.';
-
-  @override
-  String get onlyWorksOnce => 'Ovo će raditi samo jednom.';
-
-  @override
-  String get cantDoThisTwice => 'Ako drugi put zatvorite svoj račun, nećete ga moći oporaviti.';
+  String get reopenYourAccountDescription => 'If you closed your account, but have since changed your mind, you get a chance of getting your account back.';
 
   @override
   String get emailAssociatedToaccount => 'Email adresa povezana s računom';
@@ -4402,6 +4408,18 @@ class AppLocalizationsHr extends AppLocalizations {
   }
 
   @override
+  String numberBlunders(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count Grubih grešaka',
+      few: '$count Grube greške',
+      one: '$count Gruba greška',
+    );
+    return '$_temp0';
+  }
+
+  @override
   String nbMistakes(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -4414,6 +4432,18 @@ class AppLocalizationsHr extends AppLocalizations {
   }
 
   @override
+  String numberMistakes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count Grešaka',
+      few: '$count Greške',
+      one: '$count Greška',
+    );
+    return '$_temp0';
+  }
+
+  @override
   String nbInaccuracies(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -4421,6 +4451,18 @@ class AppLocalizationsHr extends AppLocalizations {
       other: '$count nepreciznosti',
       few: '$count nepreciznosti',
       one: '$count nepreciznost',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String numberInaccuracies(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count Nepreciznosti',
+      few: '$count Nepreciznosti',
+      one: '$count Nepreciznost',
     );
     return '$_temp0';
   }
@@ -5179,6 +5221,9 @@ class AppLocalizationsHr extends AppLocalizations {
 
   @override
   String get studyPlaying => 'U tijeku';
+
+  @override
+  String get studyShowResults => 'Results';
 
   @override
   String get studyShowEvalBar => 'Evaluacijska mjerila';

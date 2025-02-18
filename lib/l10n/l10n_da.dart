@@ -390,12 +390,6 @@ class AppLocalizationsDa extends AppLocalizations {
   String get broadcastUpcoming => 'Kommende';
 
   @override
-  String get broadcastCompleted => 'Afsluttet';
-
-  @override
-  String get broadcastCompletedHelp => 'Lichess registrerer rund-færdiggørelse baseret på kildepartierne. Brug denne skifter, hvis der ikke er nogen kilde.';
-
-  @override
   String get broadcastRoundName => 'Rundenavn';
 
   @override
@@ -594,6 +588,12 @@ class AppLocalizationsDa extends AppLocalizations {
 
   @override
   String get broadcastAllBroadcastsByMonth => 'Vis alle udsendelser efter måned';
+
+  @override
+  String get broadcastBackToLiveMove => 'Tilbage til live træk';
+
+  @override
+  String get broadcastSinceHideResults => 'Da du har valgt at skjule resultaterne, er alle forhåndsvisningerne af brætter tomme for at undgå afsløringer.';
 
   @override
   String broadcastNbBroadcasts(int count) {
@@ -865,7 +865,7 @@ class AppLocalizationsDa extends AppLocalizations {
   String get preferencesInGameOnly => 'Kun i spillet';
 
   @override
-  String get preferencesExceptInGame => 'Except in-game';
+  String get preferencesExceptInGame => 'Undtagen i spillet';
 
   @override
   String get preferencesChessClock => 'Skakur';
@@ -1095,7 +1095,7 @@ class AppLocalizationsDa extends AppLocalizations {
   String get puzzlePuzzleSuccess => 'Korrekt!';
 
   @override
-  String get puzzlePuzzleComplete => 'Taktikpgave løst!';
+  String get puzzlePuzzleComplete => 'Taktikopgave løst!';
 
   @override
   String get puzzleByOpenings => 'Efter åbninger';
@@ -1465,6 +1465,18 @@ class AppLocalizationsDa extends AppLocalizations {
   String get puzzleThemeIntermezzoDescription => 'I stedet for at spille det forventede træk foretages først et andet træk, som udgør en umiddelbar trussel, som modstanderen må besvare. Også kendt som \"Zwischenzug\" eller \"In between\".';
 
   @override
+  String get puzzleThemeKillBoxMate => 'Kill box-mat';
+
+  @override
+  String get puzzleThemeKillBoxMateDescription => 'Et tårn står ved siden af fjendens konge og støttes af en dronning, som også blokerer kongens flugtfelter. Tårnet og dronningen fanger fjendens konge i en 3 x 3 \"kill box\".';
+
+  @override
+  String get puzzleThemeVukovicMate => 'Vukovics mat';
+
+  @override
+  String get puzzleThemeVukovicMateDescription => 'Et tårn og en springer går sammen om at sætte kongen mat. Tårnet leverer mat, mens det støttes af en tredje brik, og springeren bruges til at blokere kongens flugtfelter.';
+
+  @override
   String get puzzleThemeKnightEndgame => 'Springerslutspil';
 
   @override
@@ -1680,16 +1692,13 @@ class AppLocalizationsDa extends AppLocalizations {
   String get settingsManagedAccountCannotBeClosed => 'Din konto er under administration og kan ikke lukkes.';
 
   @override
-  String get settingsClosingIsDefinitive => 'Lukning er uigenkaldelig. Der er ingen fortrydelsesret. Er du sikker?';
-
-  @override
   String get settingsCantOpenSimilarAccount => 'Du vil ikke få lov til at åbne en ny konto med det samme navn, selv hvis du ændrer på store og små bogstaver.';
 
   @override
-  String get settingsChangedMindDoNotCloseAccount => 'Jeg har skiftet mening, lad være med at lukke min konto';
+  String get settingsCancelKeepAccount => 'Annuller og behold min konto';
 
   @override
-  String get settingsCloseAccountExplanation => 'Er du sikker på, at du vil lukke din konto? Lukning af din konto er en permanent beslutning. Du vil ALDRIG kunne logge ind igen.';
+  String get settingsCloseAccountAreYouSure => 'Er du sikker på, at du vil lukke din konto?';
 
   @override
   String get settingsThisAccountIsClosed => 'Denne konto er lukket.';
@@ -1701,7 +1710,7 @@ class AppLocalizationsDa extends AppLocalizations {
   String get playWithTheMachine => 'Spil mod computeren';
 
   @override
-  String get toInviteSomeoneToPlayGiveThisUrl => 'Invitér en til at spille ved at oplyse denne URL';
+  String get toInviteSomeoneToPlayGiveThisUrl => 'Invitér nogen til at spille ved at give dem denne URL';
 
   @override
   String get gameOver => 'Spillet er slut';
@@ -2163,7 +2172,7 @@ class AppLocalizationsDa extends AppLocalizations {
   String get correspondence => 'Korrespondance';
 
   @override
-  String get daysPerTurn => 'Dage per træk';
+  String get daysPerTurn => 'Dage pr. træk';
 
   @override
   String get oneDay => 'En dag';
@@ -3160,17 +3169,17 @@ class AppLocalizationsDa extends AppLocalizations {
 
   @override
   String victoryVsYInZ(String param1, String param2, String param3) {
-    return '$param1 mod $param2 i $param3';
+    return '$param1 over $param2 i $param3';
   }
 
   @override
   String defeatVsYInZ(String param1, String param2, String param3) {
-    return '$param1 mod $param2 i $param3';
+    return '$param1 til $param2 i $param3';
   }
 
   @override
   String drawVsYInZ(String param1, String param2, String param3) {
-    return '$param1 mod $param2 i $param3';
+    return '$param1 med $param2 i $param3';
   }
 
   @override
@@ -3679,6 +3688,9 @@ class AppLocalizationsDa extends AppLocalizations {
   String get followAndChallengeFriends => 'Følg og udfordre dine venner';
 
   @override
+  String get noChallenges => 'Ingen udfordringer.';
+
+  @override
   String get gameAnalysis => 'Spilanalyse';
 
   @override
@@ -4037,7 +4049,7 @@ class AppLocalizationsDa extends AppLocalizations {
   String get classicalDesc => 'Klassiske spil: 25 minutter eller mere';
 
   @override
-  String get correspondenceDesc => 'Korrespondancepartier: en eller adskillige dage per træk';
+  String get correspondenceDesc => 'Korrespondancepartier: en eller adskillige dage pr. træk';
 
   @override
   String get puzzleDesc => 'Skaktaktik-træner';
@@ -4274,13 +4286,7 @@ class AppLocalizationsDa extends AppLocalizations {
   String get reopenYourAccount => 'Genåbn din konto';
 
   @override
-  String get closedAccountChangedMind => 'Hvis du har lukket din konto, men siden ombestemt dig, har du én chance for at få din konto tilbage.';
-
-  @override
-  String get onlyWorksOnce => 'Det vil kun fungere én gang.';
-
-  @override
-  String get cantDoThisTwice => 'Hvis du lukker din konto for anden gang, vil der ikke være nogen mulighed for at gendanne den.';
+  String get reopenYourAccountDescription => 'Hvis du har lukket din konto, men siden har ombestemt dig, har du en chance for at få din konto tilbage.';
 
   @override
   String get emailAssociatedToaccount => 'E-mailadresse tilknyttet kontoen';
@@ -4375,6 +4381,17 @@ class AppLocalizationsDa extends AppLocalizations {
   }
 
   @override
+  String numberBlunders(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count brølere',
+      one: '$count brøler',
+    );
+    return '$_temp0';
+  }
+
+  @override
   String nbMistakes(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -4386,7 +4403,29 @@ class AppLocalizationsDa extends AppLocalizations {
   }
 
   @override
+  String numberMistakes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count fejl',
+      one: '$count fejl',
+    );
+    return '$_temp0';
+  }
+
+  @override
   String nbInaccuracies(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count unøjagtigheder',
+      one: '$count unøjagtighed',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String numberInaccuracies(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
@@ -5111,6 +5150,9 @@ class AppLocalizationsDa extends AppLocalizations {
 
   @override
   String get studyPlaying => 'Spiller';
+
+  @override
+  String get studyShowResults => 'Resultater';
 
   @override
   String get studyShowEvalBar => 'Evalueringssøjler';

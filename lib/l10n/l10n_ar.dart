@@ -458,12 +458,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get broadcastUpcoming => 'القادمة';
 
   @override
-  String get broadcastCompleted => 'المكتملة';
-
-  @override
-  String get broadcastCompletedHelp => 'يعرف ليتشيس بانتهاء الجولة استناداً إلى المصدر، استخدم هذا التبديل إذا لم يكن هناك مصدر.';
-
-  @override
   String get broadcastRoundName => 'اسم الجولة';
 
   @override
@@ -662,6 +656,12 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get broadcastAllBroadcastsByMonth => 'View all broadcasts by month';
+
+  @override
+  String get broadcastBackToLiveMove => 'Back to live move';
+
+  @override
+  String get broadcastSinceHideResults => 'Since you chose to hide the results, all the preview boards are empty to avoid spoilers.';
 
   @override
   String broadcastNbBroadcasts(int count) {
@@ -1557,6 +1557,18 @@ class AppLocalizationsAr extends AppLocalizations {
   String get puzzleThemeIntermezzoDescription => 'بدلاً من لعب النقلة المتوقعة، يتم أولاً القيام بنقلة أخرى تشكل تهديدًا فوريًا مباشرًا يجب على الخصم الرد عليه. يُعرف أيضًا باسم \"زفيشنزوك\" أو \"أنترميزو \".';
 
   @override
+  String get puzzleThemeKillBoxMate => 'Kill box mate';
+
+  @override
+  String get puzzleThemeKillBoxMateDescription => 'A rook is next to the enemy king and supported by a queen that also blocks the king\'s escape squares. The rook and the queen catch the enemy king in a 3 by 3 \"kill box\".';
+
+  @override
+  String get puzzleThemeVukovicMate => 'Vukovic mate';
+
+  @override
+  String get puzzleThemeVukovicMateDescription => 'A rook and knight team up to mate the king. The rook delivers mate while supported by a third piece, and the knight is used to block the king\'s escape squares.';
+
+  @override
   String get puzzleThemeKnightEndgame => 'نهاية المباراة تتضمن حصان';
 
   @override
@@ -1772,16 +1784,13 @@ class AppLocalizationsAr extends AppLocalizations {
   String get settingsManagedAccountCannotBeClosed => 'حسابك يتم إدارته، ولا يمكن إغلاقه.';
 
   @override
-  String get settingsClosingIsDefinitive => 'الإغلاق الحساب نهائي، لا يمكنك التراجع عن هذا القرار، أ أنت متحقق؟';
-
-  @override
   String get settingsCantOpenSimilarAccount => 'لن يسمح لك بفتح حساب جديد بنفس الإسم، حتى لو كان حجم الأحرف مختلف.';
 
   @override
-  String get settingsChangedMindDoNotCloseAccount => 'غيرت رأيي، لا تغلق حسابي';
+  String get settingsCancelKeepAccount => 'Cancel and keep my account';
 
   @override
-  String get settingsCloseAccountExplanation => 'هل أنت متأكد من أنك تريد اغلاق حسابك؟\nاغلاق حسابك هو قرار دائم ونهائي.\nولا يمكنك التراجع عن هذا القرار على الإطلاق.';
+  String get settingsCloseAccountAreYouSure => 'Are you sure you want to close your account?';
 
   @override
   String get settingsThisAccountIsClosed => 'هذا الحساب مغلق.';
@@ -3771,6 +3780,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get followAndChallengeFriends => 'تابع وتحدى أصدقاءك';
 
   @override
+  String get noChallenges => 'No challenges.';
+
+  @override
   String get gameAnalysis => 'تحليل المباراة';
 
   @override
@@ -4366,13 +4378,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get reopenYourAccount => 'اعادة فتح حسابك';
 
   @override
-  String get closedAccountChangedMind => 'إذا كنت قد أغلقت حسابك، و أبدلت رأيك، لديك فرصة واحدة لاستعادة الحساب.';
-
-  @override
-  String get onlyWorksOnce => 'سيعمل هذا لمرة واحدة فقط';
-
-  @override
-  String get cantDoThisTwice => 'إذا أغلقت حسابك مرة ثانية فليس من الممكن استعادة حسابك مرة أخرى.';
+  String get reopenYourAccountDescription => 'If you closed your account, but have since changed your mind, you get a chance of getting your account back.';
 
   @override
   String get emailAssociatedToaccount => 'البريد الالكتروني مربوط بالحساب';
@@ -4479,6 +4485,21 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
+  String numberBlunders(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count غلطات',
+      many: '$count غلطة',
+      few: '$count غلطة',
+      two: '$count غلطة',
+      one: '$count غلطة',
+      zero: '$count غلطة',
+    );
+    return '$_temp0';
+  }
+
+  @override
   String nbMistakes(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -4494,7 +4515,37 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
+  String numberMistakes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count أخطاء',
+      many: '$count خطأ',
+      few: '$count خطأ',
+      two: '$count خطأ',
+      one: '$count خطأ',
+      zero: '$count خطأ',
+    );
+    return '$_temp0';
+  }
+
+  @override
   String nbInaccuracies(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count غموض',
+      many: '$count غموض',
+      few: '$count غموض',
+      two: '$count غموض',
+      one: '$count غموض',
+      zero: '$count غموض',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String numberInaccuracies(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
@@ -5379,6 +5430,9 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get studyPlaying => 'يلعب الان';
+
+  @override
+  String get studyShowResults => 'Results';
 
   @override
   String get studyShowEvalBar => 'شرائط التقييم';

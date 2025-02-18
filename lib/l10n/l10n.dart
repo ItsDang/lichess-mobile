@@ -666,18 +666,6 @@ abstract class AppLocalizations {
   /// **'Upcoming'**
   String get broadcastUpcoming;
 
-  /// No description provided for @broadcastCompleted.
-  ///
-  /// In en, this message translates to:
-  /// **'Completed'**
-  String get broadcastCompleted;
-
-  /// No description provided for @broadcastCompletedHelp.
-  ///
-  /// In en, this message translates to:
-  /// **'Lichess detects round completion, but can get it wrong. Use this to set it manually.'**
-  String get broadcastCompletedHelp;
-
   /// No description provided for @broadcastRoundName.
   ///
   /// In en, this message translates to:
@@ -1049,6 +1037,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'View all broadcasts by month'**
   String get broadcastAllBroadcastsByMonth;
+
+  /// No description provided for @broadcastBackToLiveMove.
+  ///
+  /// In en, this message translates to:
+  /// **'Back to live move'**
+  String get broadcastBackToLiveMove;
+
+  /// No description provided for @broadcastSinceHideResults.
+  ///
+  /// In en, this message translates to:
+  /// **'Since you chose to hide the results, all the preview boards are empty to avoid spoilers.'**
+  String get broadcastSinceHideResults;
 
   /// No description provided for @broadcastNbBroadcasts.
   ///
@@ -2604,6 +2604,30 @@ abstract class AppLocalizations {
   /// **'Instead of playing the expected move, first interpose another move posing an immediate threat that the opponent must answer. Also known as \"Zwischenzug\" or \"In between\".'**
   String get puzzleThemeIntermezzoDescription;
 
+  /// No description provided for @puzzleThemeKillBoxMate.
+  ///
+  /// In en, this message translates to:
+  /// **'Kill box mate'**
+  String get puzzleThemeKillBoxMate;
+
+  /// No description provided for @puzzleThemeKillBoxMateDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'A rook is next to the enemy king and supported by a queen that also blocks the king\'s escape squares. The rook and the queen catch the enemy king in a 3 by 3 \"kill box\".'**
+  String get puzzleThemeKillBoxMateDescription;
+
+  /// No description provided for @puzzleThemeVukovicMate.
+  ///
+  /// In en, this message translates to:
+  /// **'Vukovic mate'**
+  String get puzzleThemeVukovicMate;
+
+  /// No description provided for @puzzleThemeVukovicMateDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'A rook and knight team up to mate the king. The rook delivers mate while supported by a third piece, and the knight is used to block the king\'s escape squares.'**
+  String get puzzleThemeVukovicMateDescription;
+
   /// No description provided for @puzzleThemeKnightEndgame.
   ///
   /// In en, this message translates to:
@@ -3030,29 +3054,23 @@ abstract class AppLocalizations {
   /// **'Your account is managed, and cannot be closed.'**
   String get settingsManagedAccountCannotBeClosed;
 
-  /// No description provided for @settingsClosingIsDefinitive.
-  ///
-  /// In en, this message translates to:
-  /// **'Closing is definitive. There is no going back. Are you sure?'**
-  String get settingsClosingIsDefinitive;
-
   /// No description provided for @settingsCantOpenSimilarAccount.
   ///
   /// In en, this message translates to:
-  /// **'You will not be allowed to open a new account with the same name, even if the case is different.'**
+  /// **'The username will NOT be available for registration again.'**
   String get settingsCantOpenSimilarAccount;
 
-  /// No description provided for @settingsChangedMindDoNotCloseAccount.
+  /// No description provided for @settingsCancelKeepAccount.
   ///
   /// In en, this message translates to:
-  /// **'I changed my mind, don\'t close my account'**
-  String get settingsChangedMindDoNotCloseAccount;
+  /// **'Cancel and keep my account'**
+  String get settingsCancelKeepAccount;
 
-  /// No description provided for @settingsCloseAccountExplanation.
+  /// No description provided for @settingsCloseAccountAreYouSure.
   ///
   /// In en, this message translates to:
-  /// **'Are you sure you want to close your account? Closing your account is a permanent decision. You will NEVER be able to log in EVER AGAIN.'**
-  String get settingsCloseAccountExplanation;
+  /// **'Are you sure you want to close your account?'**
+  String get settingsCloseAccountAreYouSure;
 
   /// No description provided for @settingsThisAccountIsClosed.
   ///
@@ -6780,6 +6798,12 @@ abstract class AppLocalizations {
   /// **'Follow and challenge friends'**
   String get followAndChallengeFriends;
 
+  /// No description provided for @noChallenges.
+  ///
+  /// In en, this message translates to:
+  /// **'No challenges.'**
+  String get noChallenges;
+
   /// No description provided for @gameAnalysis.
   ///
   /// In en, this message translates to:
@@ -7854,23 +7878,11 @@ abstract class AppLocalizations {
   /// **'Reopen your account'**
   String get reopenYourAccount;
 
-  /// No description provided for @closedAccountChangedMind.
+  /// No description provided for @reopenYourAccountDescription.
   ///
   /// In en, this message translates to:
-  /// **'If you closed your account, but have since changed your mind, you get one chance of getting your account back.'**
-  String get closedAccountChangedMind;
-
-  /// No description provided for @onlyWorksOnce.
-  ///
-  /// In en, this message translates to:
-  /// **'This will only work once.'**
-  String get onlyWorksOnce;
-
-  /// No description provided for @cantDoThisTwice.
-  ///
-  /// In en, this message translates to:
-  /// **'If you close your account a second time, there will be no way of recovering it.'**
-  String get cantDoThisTwice;
+  /// **'If you closed your account, but have since changed your mind, you get a chance of getting your account back.'**
+  String get reopenYourAccountDescription;
 
   /// No description provided for @emailAssociatedToaccount.
   ///
@@ -8004,17 +8016,35 @@ abstract class AppLocalizations {
   /// **'{count, plural, =1{{count} blunder} other{{count} blunders}}'**
   String nbBlunders(int count);
 
+  /// No description provided for @numberBlunders.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{{count} Blunder} other{{count} Blunders}}'**
+  String numberBlunders(int count);
+
   /// No description provided for @nbMistakes.
   ///
   /// In en, this message translates to:
   /// **'{count, plural, =1{{count} mistake} other{{count} mistakes}}'**
   String nbMistakes(int count);
 
+  /// No description provided for @numberMistakes.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{{count} Mistake} other{{count} Mistakes}}'**
+  String numberMistakes(int count);
+
   /// No description provided for @nbInaccuracies.
   ///
   /// In en, this message translates to:
   /// **'{count, plural, =1{{count} inaccuracy} other{{count} inaccuracies}}'**
   String nbInaccuracies(int count);
+
+  /// No description provided for @numberInaccuracies.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{{count} Inaccuracy} other{{count} Inaccuracies}}'**
+  String numberInaccuracies(int count);
 
   /// No description provided for @nbPlayers.
   ///
@@ -8808,6 +8838,12 @@ abstract class AppLocalizations {
   /// **'Playing'**
   String get studyPlaying;
 
+  /// No description provided for @studyShowResults.
+  ///
+  /// In en, this message translates to:
+  /// **'Results'**
+  String get studyShowResults;
+
   /// No description provided for @studyShowEvalBar.
   ///
   /// In en, this message translates to:
@@ -9495,7 +9531,7 @@ abstract class AppLocalizations {
   /// No description provided for @studyPasteYourPgnTextHereUpToNbGames.
   ///
   /// In en, this message translates to:
-  /// **'{count, plural, =1{Paste your PGN text here, up to {count} game} other{Paste your PGN text here, up to {count} games}}'**
+  /// **'{count, plural, =1{Paste your PGN text here, up to {count} game} other{Paste games as PGN text here. For each game, a new chapter is created. The study can have up to {count} chapters.}}'**
   String studyPasteYourPgnTextHereUpToNbGames(int count);
 
   /// No description provided for @timeagoJustNow.

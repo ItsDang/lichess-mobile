@@ -53,6 +53,14 @@ class PuzzleScreen extends ConsumerStatefulWidget {
   final PuzzleAngle angle;
   final PuzzleId? puzzleId;
 
+  static Route<dynamic> buildRoute(
+    BuildContext context, {
+    required PuzzleAngle angle,
+    PuzzleId? puzzleId,
+  }) {
+    return buildScreenRoute(context, screen: PuzzleScreen(angle: angle, puzzleId: puzzleId));
+  }
+
   @override
   ConsumerState<PuzzleScreen> createState() => _PuzzleScreenState();
 }
@@ -85,10 +93,8 @@ class _PuzzleScreenState extends ConsumerState<PuzzleScreen> with RouteAware {
   Widget build(BuildContext context) {
     return WakelockWidget(
       child: PlatformScaffold(
-        appBar: PlatformAppBar(
-          actions: const [ToggleSoundButton(), _PuzzleSettingsButton()],
-          title: _Title(angle: widget.angle),
-        ),
+        appBarActions: const [ToggleSoundButton(), _PuzzleSettingsButton()],
+        appBarTitle: _Title(angle: widget.angle),
         body:
             widget.puzzleId != null
                 ? _LoadPuzzleFromId(angle: widget.angle, id: widget.puzzleId!)
@@ -427,7 +433,7 @@ class _BottomBar extends ConsumerWidget {
       actions: [
         BottomSheetAction(
           makeLabel: (context) => Text(context.l10n.mobileSharePuzzle),
-          onPressed: (context) {
+          onPressed: () {
             launchShareDialog(
               context,
               text: lichessUri('/training/${puzzleState.puzzle.puzzle.id}').toString(),
@@ -436,40 +442,38 @@ class _BottomBar extends ConsumerWidget {
         ),
         BottomSheetAction(
           makeLabel: (context) => Text(context.l10n.analysis),
-          onPressed: (context) {
-            pushPlatformRoute(
-              context,
-              builder:
-                  (context) => AnalysisScreen(
-                    options: AnalysisOptions(
-                      orientation: puzzleState.pov,
-                      standalone: (
-                        pgn: ref.read(ctrlProvider.notifier).makePgn(),
-                        isComputerAnalysisAllowed: true,
-                        variant: Variant.standard,
-                      ),
-                      initialMoveCursor: 0,
-                    ),
+          onPressed: () {
+            Navigator.of(context).push(
+              AnalysisScreen.buildRoute(
+                context,
+                AnalysisOptions(
+                  orientation: puzzleState.pov,
+                  standalone: (
+                    pgn: ref.read(ctrlProvider.notifier).makePgn(),
+                    isComputerAnalysisAllowed: true,
+                    variant: Variant.standard,
                   ),
+                  initialMoveCursor: 0,
+                ),
+              ),
             );
           },
         ),
         BottomSheetAction(
           makeLabel:
               (context) => Text(context.l10n.puzzleFromGameLink(puzzleState.puzzle.game.id.value)),
-          onPressed: (_) async {
+          onPressed: () async {
             final game = await ref.read(
               archivedGameProvider(id: puzzleState.puzzle.game.id).future,
             );
             if (context.mounted) {
-              pushPlatformRoute(
-                context,
-                builder:
-                    (context) => ArchivedGameScreen(
-                      gameData: game.data,
-                      orientation: puzzleState.pov,
-                      initialCursor: puzzleState.puzzle.puzzle.initialPly + 1,
-                    ),
+              Navigator.of(context).push(
+                ArchivedGameScreen.buildRoute(
+                  context,
+                  gameData: game.data,
+                  orientation: puzzleState.pov,
+                  initialCursor: puzzleState.puzzle.puzzle.initialPly + 1,
+                ),
               );
             }
           },

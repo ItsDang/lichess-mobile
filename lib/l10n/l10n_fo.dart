@@ -390,12 +390,6 @@ class AppLocalizationsFo extends AppLocalizations {
   String get broadcastUpcoming => 'Komandi';
 
   @override
-  String get broadcastCompleted => 'Liðug sending';
-
-  @override
-  String get broadcastCompletedHelp => 'Lichess detects round completion, but can get it wrong. Use this to set it manually.';
-
-  @override
   String get broadcastRoundName => 'Round name';
 
   @override
@@ -594,6 +588,12 @@ class AppLocalizationsFo extends AppLocalizations {
 
   @override
   String get broadcastAllBroadcastsByMonth => 'View all broadcasts by month';
+
+  @override
+  String get broadcastBackToLiveMove => 'Back to live move';
+
+  @override
+  String get broadcastSinceHideResults => 'Since you chose to hide the results, all the preview boards are empty to avoid spoilers.';
 
   @override
   String broadcastNbBroadcasts(int count) {
@@ -1463,6 +1463,18 @@ class AppLocalizationsFo extends AppLocalizations {
   String get puzzleThemeIntermezzoDescription => 'Ístaðin fyri at leika tann væntaða leikin, skalt tú leika ein annan leik, ið er ein hóttandi vandi, ið mótleikarin má varða seg ímóti her og nú. Leikurin er eisini kendur sum \"Zwischenzug\" ella \"In between\".';
 
   @override
+  String get puzzleThemeKillBoxMate => 'Kill box mate';
+
+  @override
+  String get puzzleThemeKillBoxMateDescription => 'A rook is next to the enemy king and supported by a queen that also blocks the king\'s escape squares. The rook and the queen catch the enemy king in a 3 by 3 \"kill box\".';
+
+  @override
+  String get puzzleThemeVukovicMate => 'Vukovic mate';
+
+  @override
+  String get puzzleThemeVukovicMateDescription => 'A rook and knight team up to mate the king. The rook delivers mate while supported by a third piece, and the knight is used to block the king\'s escape squares.';
+
+  @override
   String get puzzleThemeKnightEndgame => 'Riddaraendatalv';
 
   @override
@@ -1678,16 +1690,13 @@ class AppLocalizationsFo extends AppLocalizations {
   String get settingsManagedAccountCannotBeClosed => 'Your account is managed, and cannot be closed.';
 
   @override
-  String get settingsClosingIsDefinitive => 'At lata eina kontu aftur er endaligt. Til ber ikki at venda við. Ert tú vís/ur í hesum?';
-
-  @override
   String get settingsCantOpenSimilarAccount => 'Tú fært ikki loyvi at lata eina nýggja kontu upp við sama navni. Ei heldur, um bókstavirnir eru við stórum ella lítlum.';
 
   @override
-  String get settingsChangedMindDoNotCloseAccount => 'Eg broytti meining. Lat ikki kontu mína aftur';
+  String get settingsCancelKeepAccount => 'Cancel and keep my account';
 
   @override
-  String get settingsCloseAccountExplanation => 'Ert tú vís/ur í, at tú vilt lata kontu tína aftur? Hetta er ein endalig avgerð. Tað fer ikki at bera til at logga á aftur.';
+  String get settingsCloseAccountAreYouSure => 'Are you sure you want to close your account?';
 
   @override
   String get settingsThisAccountIsClosed => 'Henda konta er afturlatin.';
@@ -3677,6 +3686,9 @@ class AppLocalizationsFo extends AppLocalizations {
   String get followAndChallengeFriends => 'Fylg vinum og bjóða teimum av';
 
   @override
+  String get noChallenges => 'No challenges.';
+
+  @override
   String get gameAnalysis => 'Talvgreining';
 
   @override
@@ -4272,13 +4284,7 @@ class AppLocalizationsFo extends AppLocalizations {
   String get reopenYourAccount => 'Reopen your account';
 
   @override
-  String get closedAccountChangedMind => 'If you closed your account, but have since changed your mind, you get one chance of getting your account back.';
-
-  @override
-  String get onlyWorksOnce => 'Hetta riggar bert eina ferð.';
-
-  @override
-  String get cantDoThisTwice => 'If you close your account a second time, there will be no way of recovering it.';
+  String get reopenYourAccountDescription => 'If you closed your account, but have since changed your mind, you get a chance of getting your account back.';
 
   @override
   String get emailAssociatedToaccount => 'Email address associated to the account';
@@ -4373,6 +4379,17 @@ class AppLocalizationsFo extends AppLocalizations {
   }
 
   @override
+  String numberBlunders(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count Bukkar',
+      one: '$count Bukkur',
+    );
+    return '$_temp0';
+  }
+
+  @override
   String nbMistakes(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -4384,12 +4401,34 @@ class AppLocalizationsFo extends AppLocalizations {
   }
 
   @override
+  String numberMistakes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count Mistøk',
+      one: '$count Mistak',
+    );
+    return '$_temp0';
+  }
+
+  @override
   String nbInaccuracies(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
       other: '$count óneyvleikar',
       one: '$count óneyvleiki',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String numberInaccuracies(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count Óneyvleikar',
+      one: '$count Óneyvleiki',
     );
     return '$_temp0';
   }
@@ -5109,6 +5148,9 @@ class AppLocalizationsFo extends AppLocalizations {
 
   @override
   String get studyPlaying => 'Í gongd';
+
+  @override
+  String get studyShowResults => 'Results';
 
   @override
   String get studyShowEvalBar => 'Evaluation bars';

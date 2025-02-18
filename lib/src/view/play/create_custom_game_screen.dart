@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:ui';
 
 import 'package:deep_pick/deep_pick.dart';
 import 'package:flutter/cupertino.dart';
@@ -39,20 +38,21 @@ enum _ViewMode { create, challenges }
 class CreateCustomGameScreen extends StatelessWidget {
   const CreateCustomGameScreen();
 
+  static Route<dynamic> buildRoute(BuildContext context) {
+    return buildScreenRoute(
+      context,
+      screen: const CreateCustomGameScreen(),
+      title: context.l10n.custom,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return PlatformWidget(androidBuilder: _buildAndroid, iosBuilder: _buildIos);
   }
 
   Widget _buildIos(BuildContext context) {
-    return CupertinoPageScaffold(
-      navigationBar: CupertinoNavigationBar(
-        automaticBackgroundVisibility: false,
-        backgroundColor: Styles.cupertinoAppBarColor.resolveFrom(context).withValues(alpha: 0.0),
-        border: null,
-      ),
-      child: const _CupertinoBody(),
-    );
+    return const _CupertinoBody();
   }
 
   Widget _buildAndroid(BuildContext context) {
@@ -123,38 +123,11 @@ class _CupertinoBody extends StatefulWidget {
 
 class _CupertinoBodyState extends State<_CupertinoBody> {
   _ViewMode _selectedSegment = _ViewMode.create;
-  double headerOpacity = 0;
 
   void setViewMode(_ViewMode mode) {
     setState(() {
       _selectedSegment = mode;
-      headerOpacity = 0.0;
     });
-  }
-
-  bool handleScrollNotification(ScrollNotification notification) {
-    if (notification is ScrollUpdateNotification && notification.depth == 0) {
-      final ScrollMetrics metrics = notification.metrics;
-      double scrollExtent = 0.0;
-      switch (metrics.axisDirection) {
-        case AxisDirection.up:
-          scrollExtent = metrics.extentAfter;
-        case AxisDirection.down:
-          scrollExtent = metrics.extentBefore;
-        case AxisDirection.right:
-        case AxisDirection.left:
-          break;
-      }
-
-      final opacity = scrollExtent > 0.0 ? 1.0 : 0.0;
-
-      if (opacity != headerOpacity) {
-        setState(() {
-          headerOpacity = opacity;
-        });
-      }
-    }
-    return false;
   }
 
   @override
@@ -173,79 +146,30 @@ class _CupertinoBodyState extends State<_CupertinoBody> {
         }
       },
     );
-    return NotificationListener<ScrollNotification>(
-      onNotification: handleScrollNotification,
-      child:
-          _selectedSegment == _ViewMode.create
-              ? _TabView(
-                cupertinoTabSwitcher: tabSwitcher,
-                cupertinoHeaderOpacity: headerOpacity,
-                sliver: _CreateGameBody(setViewMode: setViewMode),
-              )
-              : _TabView(
-                cupertinoTabSwitcher: tabSwitcher,
-                cupertinoHeaderOpacity: headerOpacity,
-                sliver: _ChallengesBody(setViewMode: setViewMode),
-              ),
+    return CupertinoPageScaffold(
+      navigationBar: CupertinoNavigationBar(
+        middle: Text(context.l10n.custom),
+        bottom: PreferredSize(preferredSize: const Size.fromHeight(44.0), child: tabSwitcher),
+      ),
+      child: _TabView(
+        sliver:
+            _selectedSegment == _ViewMode.create
+                ? _CreateGameBody(setViewMode: setViewMode)
+                : _ChallengesBody(setViewMode: setViewMode),
+      ),
     );
   }
 }
 
 class _TabView extends StatelessWidget {
-  const _TabView({
-    required this.sliver,
-    this.cupertinoTabSwitcher,
-    this.cupertinoHeaderOpacity = 0.0,
-  });
+  const _TabView({required this.sliver});
 
   final Widget sliver;
-  final Widget? cupertinoTabSwitcher;
-  final double cupertinoHeaderOpacity;
 
   @override
   Widget build(BuildContext context) {
-    final edgeInsets =
-        MediaQuery.paddingOf(context) -
-        (cupertinoTabSwitcher != null
-            ? EdgeInsets.only(top: MediaQuery.paddingOf(context).top)
-            : EdgeInsets.zero) +
-        Styles.verticalBodyPadding;
-    final backgroundColor = Styles.cupertinoAppBarColor.resolveFrom(context);
-    return CustomScrollView(
-      slivers: [
-        if (cupertinoTabSwitcher != null)
-          PinnedHeaderSliver(
-            child: ClipRect(
-              child: BackdropFilter(
-                enabled: backgroundColor.alpha != 0xFF,
-                filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
-                child: AnimatedContainer(
-                  duration: const Duration(milliseconds: 200),
-                  decoration: ShapeDecoration(
-                    color:
-                        cupertinoHeaderOpacity == 1.0
-                            ? backgroundColor
-                            : backgroundColor.withAlpha(0),
-                    shape: LinearBorder.bottom(
-                      side: BorderSide(
-                        color:
-                            cupertinoHeaderOpacity == 1.0
-                                ? const Color(0x4D000000)
-                                : Colors.transparent,
-                        width: 0.0,
-                      ),
-                    ),
-                  ),
-                  padding:
-                      Styles.bodyPadding + EdgeInsets.only(top: MediaQuery.paddingOf(context).top),
-                  child: cupertinoTabSwitcher,
-                ),
-              ),
-            ),
-          ),
-        SliverPadding(padding: edgeInsets, sliver: sliver),
-      ],
-    );
+    final edgeInsets = MediaQuery.paddingOf(context) + Styles.verticalBodyPadding;
+    return CustomScrollView(slivers: [SliverPadding(padding: edgeInsets, sliver: sliver)]);
   }
 }
 
@@ -276,13 +200,10 @@ class _ChallengesBodyState extends ConsumerState<_ChallengesBody> {
           final data = event.data as Map<String, dynamic>;
           final gameFullId = pick(data['id']).asGameFullIdOrThrow();
           if (mounted) {
-            pushPlatformRoute(
+            Navigator.of(
               context,
               rootNavigator: true,
-              builder: (BuildContext context) {
-                return GameScreen(initialGameId: gameFullId);
-              },
-            );
+            ).push(GameScreen.buildRoute(context, initialGameId: gameFullId));
           }
           widget.setViewMode(_ViewMode.create);
 
@@ -312,7 +233,10 @@ class _ChallengesBodyState extends ConsumerState<_ChallengesBody> {
         return SliverList.separated(
           itemCount: supportedChallenges.length,
           separatorBuilder:
-              (context, index) => const PlatformDivider(height: 1, cupertinoHasLeading: true),
+              (context, index) =>
+                  Theme.of(context).platform == TargetPlatform.iOS
+                      ? const PlatformDivider(height: 1, cupertinoHasLeading: true)
+                      : const SizedBox.shrink(),
           itemBuilder: (context, index) {
             final challenge = supportedChallenges[index];
             final isMySeek = UserId.fromUserName(challenge.username) == session?.user.id;
@@ -336,7 +260,7 @@ class _ChallengesBodyState extends ConsumerState<_ChallengesBody> {
                           context,
                           title: Text(context.l10n.accept),
                           isDestructiveAction: true,
-                          onConfirm: (_) {
+                          onConfirm: () {
                             socketClient.send('joinSeek', challenge.id.toString());
                           },
                         );
@@ -600,7 +524,6 @@ class _CreateGameBodyState extends ConsumerState<_CreateGameBody> {
                   harmonizeCupertinoTitleStyle: true,
                   title: Text(context.l10n.rated),
                   trailing: Switch.adaptive(
-                    applyCupertinoTheme: true,
                     value: preferences.customRated,
                     onChanged: (bool value) {
                       ref.read(gameSetupPreferencesProvider.notifier).setCustomRated(value);
@@ -629,14 +552,11 @@ class _CreateGameBodyState extends ConsumerState<_CreateGameBody> {
                           timeControl == TimeControl.realTime
                               ? isValidTimeControl
                                   ? () {
-                                    pushPlatformRoute(
-                                      context,
-                                      rootNavigator: true,
-                                      builder: (BuildContext context) {
-                                        return GameScreen(
-                                          seek: GameSeek.custom(preferences, account),
-                                        );
-                                      },
+                                    Navigator.of(context, rootNavigator: true).push(
+                                      GameScreen.buildRoute(
+                                        context,
+                                        seek: GameSeek.custom(preferences, account),
+                                      ),
                                     );
                                   }
                                   : null

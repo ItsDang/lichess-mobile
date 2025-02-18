@@ -34,6 +34,8 @@ class AnalysisTreeView extends ConsumerWidget {
         shouldShowComputerVariations: enableComputerAnalysis,
         shouldShowComments: enableComputerAnalysis && prefs.showPgnComments,
         shouldShowAnnotations: enableComputerAnalysis && prefs.showAnnotations,
+        displayMode:
+            prefs.inlineNotation ? PgnTreeDisplayMode.inlineNotation : PgnTreeDisplayMode.twoColumn,
       ),
     );
   }

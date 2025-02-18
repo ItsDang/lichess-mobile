@@ -39,8 +39,23 @@ import 'package:logging/logging.dart';
 
 final _logger = Logger('StudyScreen');
 
-class StudyScreen extends ConsumerWidget {
-  const StudyScreen({required this.id});
+class StudyScreen extends StatelessWidget {
+  const StudyScreen({required this.id, super.key});
+
+  final StudyId id;
+
+  static Route<dynamic> buildRoute(BuildContext context, StudyId id) {
+    return buildScreenRoute(context, screen: StudyScreen(id: id));
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return _StudyScreenLoader(id: id);
+  }
+}
+
+class _StudyScreenLoader extends ConsumerWidget {
+  const _StudyScreenLoader({required this.id});
 
   final StudyId id;
 
@@ -53,10 +68,12 @@ class StudyScreen extends ConsumerWidget {
       case AsyncError(:final error, :final stackTrace):
         _logger.severe('Cannot load study: $error', stackTrace);
         return PlatformScaffold(
-          appBar: const PlatformAppBar(title: Text('')),
+          enableBackgroundFilterBlur: false,
+          appBarTitle: const Text(''),
           body: DefaultTabController(
             length: 1,
             child: AnalysisLayout(
+              pov: Side.white,
               boardBuilder:
                   (context, boardSize, borderRadius) => Chessboard.fixed(
                     size: boardSize,
@@ -73,18 +90,17 @@ class StudyScreen extends ConsumerWidget {
         );
       case _:
         return PlatformScaffold(
-          appBar: PlatformAppBar(
-            title: Shimmer(
-              child: ShimmerLoading(
-                isLoading: true,
-                child: SizedBox(
-                  height: 24.0,
-                  width: 200.0,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Colors.black,
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
+          enableBackgroundFilterBlur: false,
+          appBarTitle: Shimmer(
+            child: ShimmerLoading(
+              isLoading: true,
+              child: SizedBox(
+                height: 24.0,
+                width: 200.0,
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.black,
+                    borderRadius: BorderRadius.circular(10.0),
                   ),
                 ),
               ),
@@ -93,6 +109,7 @@ class StudyScreen extends ConsumerWidget {
           body: DefaultTabController(
             length: 1,
             child: AnalysisLayout(
+              pov: Side.white,
               boardBuilder:
                   (context, boardSize, borderRadius) => Chessboard.fixed(
                     size: boardSize,
@@ -164,18 +181,17 @@ class _StudyScreenState extends ConsumerState<_StudyScreen> with TickerProviderS
   @override
   Widget build(BuildContext context) {
     return PlatformScaffold(
-      appBar: PlatformAppBar(
-        title: AutoSizeText(
-          widget.studyState.currentChapterTitle,
-          maxLines: 2,
-          minFontSize: 14,
-          overflow: TextOverflow.ellipsis,
-        ),
-        actions: [
-          if (tabs.length > 1) AppBarAnalysisTabIndicator(tabs: tabs, controller: _tabController),
-          _StudyMenu(id: widget.id),
-        ],
+      enableBackgroundFilterBlur: false,
+      appBarTitle: AutoSizeText(
+        widget.studyState.currentChapterTitle,
+        maxLines: 2,
+        minFontSize: 14,
+        overflow: TextOverflow.ellipsis,
       ),
+      appBarActions: [
+        if (tabs.length > 1) AppBarAnalysisTabIndicator(tabs: tabs, controller: _tabController),
+        _StudyMenu(id: widget.id),
+      ],
       body: _Body(id: widget.id, tabController: _tabController, tabs: tabs),
     );
   }
@@ -190,41 +206,56 @@ class _StudyMenu extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final state = ref.watch(studyControllerProvider(id)).requireValue;
 
-    return PlatformAppBarMenuButton(
-      semanticsLabel: 'Study menu',
-      icon: const Icon(Icons.more_horiz),
-      actions: [
-        AppBarMenuAction(
-          icon: Icons.settings,
-          label: context.l10n.settingsSettings,
+    return MenuAnchor(
+      builder:
+          (context, controller, _) => AppBarIconButton(
+            onPressed: () {
+              if (controller.isOpen) {
+                controller.close();
+              } else {
+                controller.open();
+              }
+            },
+            semanticsLabel: 'Study menu',
+            icon: const Icon(Icons.more_horiz),
+          ),
+      menuChildren: [
+        MenuItemButton(
+          leadingIcon: const Icon(Icons.settings),
+          semanticsLabel: context.l10n.settingsSettings,
+          child: Text(context.l10n.settingsSettings),
           onPressed: () {
-            pushPlatformRoute(context, screen: StudySettings(id));
+            Navigator.of(context).push(StudySettingsScreen.buildRoute(context, id));
           },
         ),
-        AppBarMenuAction(
-          icon: state.study.liked ? Icons.favorite : Icons.favorite_border,
-          label: state.study.liked ? context.l10n.studyUnlike : context.l10n.studyLike,
+        MenuItemButton(
+          closeOnActivate: false,
+          leadingIcon: Icon(state.study.liked ? Icons.favorite : Icons.favorite_border),
+          semanticsLabel: state.study.liked ? context.l10n.studyUnlike : context.l10n.studyLike,
+          child: Text(state.study.liked ? context.l10n.studyUnlike : context.l10n.studyLike),
           onPressed: () {
             ref.read(studyControllerProvider(id).notifier).toggleLike();
           },
         ),
-        AppBarMenuAction(
-          icon:
-              Theme.of(context).platform == TargetPlatform.iOS ? CupertinoIcons.share : Icons.share,
-          label: context.l10n.studyShareAndExport,
+        MenuItemButton(
+          leadingIcon: Icon(
+            Theme.of(context).platform == TargetPlatform.iOS ? CupertinoIcons.share : Icons.share,
+          ),
+          semanticsLabel: context.l10n.studyShareAndExport,
+          child: Text(context.l10n.studyShareAndExport),
           onPressed: () {
             showAdaptiveActionSheet<void>(
               context: context,
               actions: [
                 BottomSheetAction(
                   makeLabel: (context) => Text(context.l10n.studyStudyUrl),
-                  onPressed: (context) async {
+                  onPressed: () async {
                     launchShareDialog(context, uri: lichessUri('/study/${state.study.id}'));
                   },
                 ),
                 BottomSheetAction(
                   makeLabel: (context) => Text(context.l10n.studyCurrentChapterUrl),
-                  onPressed: (context) async {
+                  onPressed: () async {
                     launchShareDialog(
                       context,
                       uri: lichessUri('/study/${state.study.id}/${state.study.chapter.id}'),
@@ -234,7 +265,7 @@ class _StudyMenu extends ConsumerWidget {
                 if (!state.gamebookActive) ...[
                   BottomSheetAction(
                     makeLabel: (context) => Text(context.l10n.studyStudyPgn),
-                    onPressed: (context) async {
+                    onPressed: () async {
                       try {
                         final pgn = await ref
                             .read(studyRepositoryProvider)
@@ -255,14 +286,14 @@ class _StudyMenu extends ConsumerWidget {
                   ),
                   BottomSheetAction(
                     makeLabel: (context) => Text(context.l10n.studyChapterPgn),
-                    onPressed: (context) async {
+                    onPressed: () async {
                       launchShareDialog(context, text: state.pgn);
                     },
                   ),
                   if (state.position != null)
                     BottomSheetAction(
                       makeLabel: (context) => Text(context.l10n.screenshotCurrentPosition),
-                      onPressed: (_) async {
+                      onPressed: () async {
                         try {
                           final image = await ref
                               .read(gameShareServiceProvider)
@@ -289,7 +320,7 @@ class _StudyMenu extends ConsumerWidget {
                     ),
                   BottomSheetAction(
                     makeLabel: (context) => const Text('GIF'),
-                    onPressed: (_) async {
+                    onPressed: () async {
                       try {
                         final gif = await ref
                             .read(gameShareServiceProvider)
@@ -340,6 +371,7 @@ class _Body extends ConsumerWidget {
       return DefaultTabController(
         length: 1,
         child: AnalysisLayout(
+          pov: Side.white,
           boardBuilder:
               (context, boardSize, borderRadius) => SizedBox.square(
                 dimension: boardSize,
@@ -359,11 +391,13 @@ class _Body extends ConsumerWidget {
     final isComputerAnalysisAllowed = studyState.isComputerAnalysisAllowed;
     final isLocalEvaluationEnabled = studyState.isLocalEvaluationEnabled;
     final currentNode = studyState.currentNode;
+    final pov = studyState.pov;
 
     final bottomChild = gamebookActive ? StudyGamebook(id) : StudyTreeView(id);
 
     return AnalysisLayout(
       tabController: tabController,
+      pov: pov,
       boardBuilder:
           (context, boardSize, borderRadius) =>
               _StudyBoard(id: id, boardSize: boardSize, borderRadius: borderRadius),
@@ -388,7 +422,7 @@ class _Body extends ConsumerWidget {
       engineLines:
           isComputerAnalysisAllowed && isLocalEvaluationEnabled && numEvalLines > 0
               ? EngineLines(
-                clientEval: currentNode.eval,
+                localEval: currentNode.eval,
                 isGameOver: currentNode.position?.isGameOver ?? false,
                 onTapMove: ref.read(studyControllerProvider(id).notifier).onUserMove,
               )

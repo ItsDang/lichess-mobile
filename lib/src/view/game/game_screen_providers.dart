@@ -68,6 +68,18 @@ class IsBoardTurned extends _$IsBoardTurned {
 }
 
 @riverpod
+Future<bool> isGameBookmarked(Ref ref, GameFullId gameId) {
+  return ref.watch(
+    gameControllerProvider(gameId).selectAsync((state) => state.game.bookmarked ?? false),
+  );
+}
+
+@riverpod
+Future<bool> isGamePlayable(Ref ref, GameFullId gameId) {
+  return ref.watch(gameControllerProvider(gameId).selectAsync((state) => state.game.playable));
+}
+
+@riverpod
 Future<bool> shouldPreventGoingBack(Ref ref, GameFullId gameId) {
   return ref.watch(
     gameControllerProvider(

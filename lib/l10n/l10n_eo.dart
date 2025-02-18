@@ -390,12 +390,6 @@ class AppLocalizationsEo extends AppLocalizations {
   String get broadcastUpcoming => 'Baldaŭ';
 
   @override
-  String get broadcastCompleted => 'Kompletigita';
-
-  @override
-  String get broadcastCompletedHelp => 'Lichess detektas raŭndan finiĝon baze sur la fontaj ludoj. Uzu ĉi tiun baskuligo, se ne estas fonto.';
-
-  @override
   String get broadcastRoundName => 'Raŭndnomo';
 
   @override
@@ -594,6 +588,12 @@ class AppLocalizationsEo extends AppLocalizations {
 
   @override
   String get broadcastAllBroadcastsByMonth => 'View all broadcasts by month';
+
+  @override
+  String get broadcastBackToLiveMove => 'Back to live move';
+
+  @override
+  String get broadcastSinceHideResults => 'Since you chose to hide the results, all the preview boards are empty to avoid spoilers.';
 
   @override
   String broadcastNbBroadcasts(int count) {
@@ -1465,6 +1465,18 @@ class AppLocalizationsEo extends AppLocalizations {
   String get puzzleThemeIntermezzoDescription => 'Anstataŭ ludo de la atendita movo, unue intermetu alian movon, kiu faras tujan minacon, al kiu via kontraŭulo devas respondi.';
 
   @override
+  String get puzzleThemeKillBoxMate => 'Kill box mate';
+
+  @override
+  String get puzzleThemeKillBoxMateDescription => 'A rook is next to the enemy king and supported by a queen that also blocks the king\'s escape squares. The rook and the queen catch the enemy king in a 3 by 3 \"kill box\".';
+
+  @override
+  String get puzzleThemeVukovicMate => 'Vukovic mate';
+
+  @override
+  String get puzzleThemeVukovicMateDescription => 'A rook and knight team up to mate the king. The rook delivers mate while supported by a third piece, and the knight is used to block the king\'s escape squares.';
+
+  @override
   String get puzzleThemeKnightEndgame => 'Ĉevala finaĵo';
 
   @override
@@ -1680,16 +1692,13 @@ class AppLocalizationsEo extends AppLocalizations {
   String get settingsManagedAccountCannotBeClosed => 'Via konto estas administrata, kaj ne povas esti fermata.';
 
   @override
-  String get settingsClosingIsDefinitive => 'Fermado estas definitiva. Ne eblos malfari. Ĉu vi certas?';
-
-  @override
   String get settingsCantOpenSimilarAccount => 'Vi ne rajtos malfermi novan konton kun la sama nomo, eĉ se la uskleco estos malsama.';
 
   @override
-  String get settingsChangedMindDoNotCloseAccount => 'Mi ŝanĝis mian opinion, mi ne volas fermi mian konton';
+  String get settingsCancelKeepAccount => 'Cancel and keep my account';
 
   @override
-  String get settingsCloseAccountExplanation => 'Ĉu vi certas, ke vi volas fermi vian konton? Fermi vian konton estas konstanta decido. Vi NENIAM DENOVE povos ensaluti per ĝi.';
+  String get settingsCloseAccountAreYouSure => 'Are you sure you want to close your account?';
 
   @override
   String get settingsThisAccountIsClosed => 'Tiu ĉi konto estas fermita.';
@@ -3679,6 +3688,9 @@ class AppLocalizationsEo extends AppLocalizations {
   String get followAndChallengeFriends => 'Sekvi kaj defii amikojn';
 
   @override
+  String get noChallenges => 'No challenges.';
+
+  @override
   String get gameAnalysis => 'Ludanalizo';
 
   @override
@@ -4274,13 +4286,7 @@ class AppLocalizationsEo extends AppLocalizations {
   String get reopenYourAccount => 'Remalfermi vian konton';
 
   @override
-  String get closedAccountChangedMind => 'Se vi fermis vian konton, sed decidis alie poste, vi povas unufoje rehavigi vian konton.';
-
-  @override
-  String get onlyWorksOnce => 'Ĉi tiu funkcios nur unufoje.';
-
-  @override
-  String get cantDoThisTwice => 'Se vi fermos vian konton je la dua fojo, ne estos maniero por regajni ĝin.';
+  String get reopenYourAccountDescription => 'If you closed your account, but have since changed your mind, you get a chance of getting your account back.';
 
   @override
   String get emailAssociatedToaccount => 'Retpoŝtadreso, ke asociitas al la konto';
@@ -4375,6 +4381,17 @@ class AppLocalizationsEo extends AppLocalizations {
   }
 
   @override
+  String numberBlunders(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count Eraregoj',
+      one: '$count Erarego',
+    );
+    return '$_temp0';
+  }
+
+  @override
   String nbMistakes(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -4386,12 +4403,34 @@ class AppLocalizationsEo extends AppLocalizations {
   }
 
   @override
+  String numberMistakes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count Eraroj',
+      one: '$count Eraro',
+    );
+    return '$_temp0';
+  }
+
+  @override
   String nbInaccuracies(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
       other: '$count eraretoj',
       one: '$count erareto',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String numberInaccuracies(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count Eraretoj',
+      one: '$count Erareto',
     );
     return '$_temp0';
   }
@@ -5111,6 +5150,9 @@ class AppLocalizationsEo extends AppLocalizations {
 
   @override
   String get studyPlaying => 'Ludanta';
+
+  @override
+  String get studyShowResults => 'Results';
 
   @override
   String get studyShowEvalBar => 'Taksaj stangoj';
