@@ -111,18 +111,21 @@ class ServerAnalysisSummary extends ConsumerWidget {
                           context.l10n.nbInaccuracies(2).replaceAll('2', '').trim().capitalize(),
                           playersAnalysis.black.inaccuracies.toString(),
                           LichessColors.cyan,
+                          '?!',
                         ),
                         (
                           playersAnalysis.white.mistakes.toString(),
                           context.l10n.nbMistakes(2).replaceAll('2', '').trim().capitalize(),
                           playersAnalysis.black.mistakes.toString(),
                           LichessColors.mistake,
+                          '?',
                         ),
                         (
                           playersAnalysis.white.blunders.toString(),
                           context.l10n.nbBlunders(2).replaceAll('2', '').trim().capitalize(),
                           playersAnalysis.black.blunders.toString(),
                           LichessColors.blunder,
+                          '??',
                         ),
                       ])
                         TableRow(
@@ -130,10 +133,66 @@ class ServerAnalysisSummary extends ConsumerWidget {
                             _SummaryNumber(item.$1),
                             Center(
                               heightFactor: 1.2,
-                              child: Text(
-                                item.$2,
-                                softWrap: true,
-                                style: TextStyle(color: item.$4),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Container(
+                                    padding: const EdgeInsets.all(2.0),
+                                    decoration: const BoxDecoration(
+                                      color: Color.fromARGB(0, 255, 255, 255),
+                                      shape: BoxShape.circle,
+                                      boxShadow: [
+                                        BoxShadow(color: Color.fromARGB(0, 255, 255, 255)),
+                                      ],
+                                    ),
+                                    child: FittedBox(
+                                      child: Center(
+                                        child: Text(
+                                          item.$5,
+                                          style: const TextStyle(
+                                            color: Color.fromARGB(0, 255, 255, 255),
+                                            fontWeight: FontWeight.w800,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: Center(
+                                      child: Text(
+                                        item.$2,
+                                        softWrap: true,
+                                        style: TextStyle(color: item.$4),
+                                      ),
+                                    ),
+                                  ),
+                                  Container(
+                                    padding: const EdgeInsets.all(2.0),
+                                    decoration: BoxDecoration(
+                                      color: item.$4,
+                                      shape: BoxShape.circle,
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: const Color(0xFF000000).withValues(alpha: 0.5),
+                                          blurRadius: 1,
+                                          offset: const Offset(1, 1),
+                                        ),
+                                      ],
+                                    ),
+                                    child: FittedBox(
+                                      child: Center(
+                                        child: Text(
+                                          item.$5,
+                                          style: const TextStyle(
+                                            color: Color(0xFFFFFFFF),
+                                            fontWeight: FontWeight.w800,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
                             _SummaryNumber(item.$3),
