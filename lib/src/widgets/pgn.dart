@@ -779,7 +779,18 @@ class _TwoColumnMainlinePart extends ConsumerWidget {
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 4, horizontal: kViewHorizontalPadding),
             child: Text.rich(
-              TextSpan(children: _comments(lastBranch!.textComments, textStyle: textStyle)),
+              TextSpan(
+                children: _comments(
+                  lastBranch!.textComments,
+                  textStyle: textStyle.copyWith(
+                    color: _textColor(
+                      context,
+                      0.9,
+                      nag: params.shouldShowAnnotations ? lastBranch.nags?.firstOrNull : null,
+                    ),
+                  ),
+                ),
+              ),
             ),
           ),
       ],
@@ -840,7 +851,13 @@ class _InlineNotationMainlinePart extends ConsumerWidget {
                       pathToLine: initialPath,
                     ),
                     pathToNode: path,
-                    textStyle: textStyle,
+                    textStyle: textStyle.copyWith(
+                      color: _textColor(
+                        context,
+                        0.9,
+                        nag: params.shouldShowAnnotations ? mainlineNode.nags?.firstOrNull : null,
+                      ),
+                    ),
                     params: params,
                   ),
                   if (children.length == 2 && _displaySideLineAsInline(children[1])) ...[
